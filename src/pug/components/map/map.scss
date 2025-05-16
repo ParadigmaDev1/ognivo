@@ -3,4 +3,8 @@
 .map {
   @include s(height, 548);
   @include s(width, 648);
+  @media (max-width: $tab-sm) {
+    @include s(height, 255);
+    @include s(width, 320);
+  }
 }

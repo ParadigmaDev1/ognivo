@@ -51,7 +51,7 @@ export const map = () => {
       const markerImg = document.createElement("img");
       markerElement.className = "marker";
       markerImg.className = "marker-img";
-      markerImg.src = "../img/icons/map-pin.svg";
+      markerImg.src = "./img/icons/map-pin.svg";
       markerElement.appendChild(markerImg);
 
       const marker = new YMapMarker(

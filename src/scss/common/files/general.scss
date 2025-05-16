@@ -121,7 +121,7 @@ svg {
   pointer-events: none;
 
   @media (max-width: $tab-sm) {
-    display: none;
+    display: none !important;
   }
   button {
     pointer-events: all !important;

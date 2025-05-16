@@ -7,6 +7,10 @@
   justify-content: center;
   @include s(width, 172);
   @include s(height, 172);
+  @media (max-width: $tab-sm) {
+    @include s(width, 96);
+    @include s(height, 96);
+  }
   .alert-outer,
   .alert-inner {
     position: absolute;
@@ -21,11 +25,19 @@
     @include s(width, 172);
     @include s(height, 172);
     mask: url("../img/icons/nav-bg.svg") center/cover no-repeat;
+    @media (max-width: $tab-sm) {
+      @include s(width, 96);
+      @include s(height, 96);
+    }
   }
   .alert-inner {
     @include s(width, 148);
     @include s(height, 148);
     mask: url("../img/icons/nav-bg.svg") center/cover no-repeat;
+    @media (max-width: $tab-sm) {
+      @include s(width, 82);
+      @include s(height, 82);
+    }
   }
   img {
     width: 100%;

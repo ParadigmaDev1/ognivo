@@ -8,7 +8,10 @@
   z-index: 100;
   @include s(padding-top, 24);
   transition: background var(--trs-cubic-600), box-shadow var(--trs-cubic-600);
-
+  @media (max-width: $tab-sm) {
+    @include s(padding-top, 12);
+    @include s(padding-bottom, 12);
+  }
   .header-inner {
     display: flex;
     justify-content: space-between;
@@ -25,6 +28,10 @@
         position: relative;
         padding: 0;
         transition: var(--trs-cubic-600);
+        @media (max-width: $tab-sm) {
+          @include s(width, 40);
+          @include s(height, 40);
+        }
         span {
           @include s(width, 24);
           height: 1px;
@@ -34,6 +41,9 @@
           right: 0;
           margin: auto;
           transition: var(--trs-cubic-600);
+          @media (max-width: $tab-sm) {
+            @include s(width, 16);
+          }
           &:nth-child(1) {
             @include s(top, 14);
           }
@@ -66,7 +76,9 @@
         align-items: center;
         @include s(gap, 20);
         transition: var(--trs-300);
-
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
         a,
         button {
           color: var(--white-color);
@@ -98,6 +110,8 @@
         opacity: 0;
         transition: var(--trs-600);
         transform: translateY(-40%);
+        pointer-events: none;
+
         svg {
           @include s(width, 19);
           @include s(height, 17);
@@ -116,7 +130,13 @@
         @include s(max-height, 116);
         @include s(padding-right, 21);
         transition: var(--trs-cubic-600);
-
+        @media (max-width: $tab-sm) {
+          @include s(min-width, 63);
+          @include s(min-height, 40);
+          @include s(max-width, 63);
+          @include s(max-height, 40);
+          padding-right: 0;
+        }
         svg {
           width: 100%;
           height: 100%;
@@ -147,16 +167,39 @@
         }
         .tel {
           @include padding(0, 24);
+          @media (max-width: $tab-sm) {
+            padding: 0;
+            @include s(width, 40);
+            @include s(height, 40);
+            p {
+              display: none;
+            }
+            svg {
+              display: block;
+              @include s(width, 15);
+              @include s(height, 15);
+            }
+          }
+          img {
+            display: none;
+          }
         }
         .tg,
         .wa {
           @include s(min-width, 40);
           @include s(width, 40);
-
+          @media (max-width: $tab-sm) {
+            display: none;
+          }
           svg {
             @include s(width, 17);
             @include s(height, 17);
           }
+        }
+      }
+      .btn {
+        @media (max-width: $tab-sm) {
+          display: none;
         }
       }
     }
@@ -197,6 +240,13 @@
     }
     .header-contacts-wrapper {
       .header-contacts {
+        .tel {
+          svg {
+            path {
+              fill: var(--dark-color);
+            }
+          }
+        }
         a {
           border-color: var(--lines-red-color);
           color: var(--dark-color);
@@ -214,11 +264,13 @@
     .header-navigation {
       .account-btn {
         transform: translateX(0);
+        pointer-events: all;
         opacity: 1;
       }
       nav {
         transform: translateY(40%);
         opacity: 0;
+        pointer-events: none;
       }
     }
   }

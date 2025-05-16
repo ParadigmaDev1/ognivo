@@ -3,6 +3,10 @@
 .home-features {
   position: relative;
   @include s(height, 684);
+  @media (max-width: $tab-sm) {
+    @include s(height, 640);
+    overflow: hidden;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -17,6 +21,9 @@
     @include s(height, 375);
     z-index: 1;
     pointer-events: none;
+    @media (max-width: $tab-sm) {
+      @include s(height, 196);
+    }
   }
   .viniet {
     position: absolute;
@@ -25,6 +32,9 @@
     top: 0;
     left: 0;
     z-index: 2;
+    @media (max-width: $tab-sm) {
+      display: none;
+    }
     img {
       @include s(height, 96);
       @include s(width, 144);
@@ -111,7 +121,9 @@
         left: 0;
         right: 0;
         margin: auto;
-
+        @media (max-width: $tab-sm) {
+          @include s(top, 96);
+        }
         .bg {
           mask: url("../img/mask-format.svg") center/cover no-repeat;
           @include s(height, 469);
@@ -125,6 +137,10 @@
           bottom: 0;
           right: 0;
           margin: auto;
+          @media (max-width: $tab-sm) {
+            @include s(height, 348);
+            @include s(width, 220);
+          }
         }
         .swiper-wrapper {
           z-index: 3;
@@ -155,10 +171,18 @@
             border-bottom: 1px solid var(--lines-white-color);
             width: 100%;
             @include s(max-width, 248);
-
+            @media (max-width: $tab-sm) {
+              @include s(max-width, 180);
+              @include s(padding-bottom, 12);
+              @include s(gap, 4);
+            }
             img {
               @include s(height, 16);
               @include s(width, 29);
+              @media (max-width: $tab-sm) {
+                @include s(height, 12);
+                @include s(width, 22);
+              }
             }
             p {
               text-transform: uppercase;
@@ -171,6 +195,9 @@
             color: var(--white-color);
             @include h1;
             @include s(margin-top, 38);
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 28);
+            }
           }
           .descr {
             @include s(margin-top, 34);
@@ -179,11 +206,17 @@
             text-transform: uppercase;
             @include s(max-width, 248);
             color: var(--white-color);
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 16);
+              @include s(max-width, 180);
+              @include descr-s;
+            }
           }
           button {
             @include s(margin-top, 26);
             @include s(height, 56);
             @include s(width, 56);
+
             img {
               width: 100%;
               height: 100%;
@@ -200,6 +233,12 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(111px, 1fr));
         margin: auto;
+        @media (max-width: $tab-sm) {
+          @include s(gap, 20);
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+        }
         .pagination-button {
           display: flex;
           flex-direction: column;
@@ -209,6 +248,10 @@
           text-transform: uppercase;
           @include descr-m;
           position: relative;
+          @media (max-width: $tab-sm) {
+            white-space: nowrap;
+            @include descr-s;
+          }
           &.pagination-prev,
           &.active {
             color: var(--accent-color);

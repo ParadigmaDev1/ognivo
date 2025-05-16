@@ -2,11 +2,18 @@
 
 .home-alert {
   @include s(height, 1059);
+  @media (max-width: $tab-sm) {
+    @include s(height, 688);
+  }
   .image-wrapper {
     @include s(height, 600);
     mask: url("../img/mask-hero.svg") bottom/cover no-repeat;
     position: relative;
     z-index: 2;
+    @media (max-width: $tab-sm) {
+      @include s(height, 272);
+      mask: url("../img/mask-hero-mob.png") bottom/cover no-repeat;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -21,6 +28,9 @@
       @include s(height, 356);
       z-index: 1;
       pointer-events: none;
+      @media (max-width: $tab-sm) {
+        @include s(height, 128);
+      }
     }
     img {
       width: 100%;
@@ -46,6 +56,13 @@
     background: var(--accent-color);
     @include s(padding-top, 138);
     @include s(margin-top, -111);
+    @media (max-width: $tab-sm) {
+      @include s(height, 461);
+      @include s(margin-top, -50);
+      @include s(padding-top, 57);
+
+      mask: url("../img/mask-hero-mob.png") bottom/cover no-repeat;
+    }
     .home-alert-wrapper-inner {
       display: flex;
       flex-direction: column;
@@ -53,21 +70,52 @@
       & > img {
         @include s(width, 28);
         @include s(height, 11);
+        @media (max-width: $tab-sm) {
+          @include s(width, 24);
+          @include s(height, 10);
+        }
       }
       .content {
         display: grid;
         @include gtc(228, 1fr, 228);
         @include s(gap, 104);
+        @media (max-width: $tab-sm) {
+          grid-template-columns: 1fr;
+          @include s(gap, 16);
+        }
         .alert-img {
           @include s(width, 228);
           @include s(height, 228);
+          &:first-child {
+            @media (max-width: $tab-sm) {
+              order: 1;
+            }
+          }
+          &:last-child {
+            @media (max-width: $tab-sm) {
+              display: none;
+            }
+          }
+          @media (max-width: $tab-sm) {
+            @include s(width, 116);
+            @include s(height, 116);
+            margin: auto;
+          }
           .alert-outer {
             @include s(width, 228);
             @include s(height, 228);
+            @media (max-width: $tab-sm) {
+              @include s(width, 116);
+              @include s(height, 116);
+            }
           }
           .alert-inner {
             @include s(width, 203);
             @include s(height, 203);
+            @media (max-width: $tab-sm) {
+              @include s(width, 103);
+              @include s(height, 103);
+            }
           }
         }
         .title {

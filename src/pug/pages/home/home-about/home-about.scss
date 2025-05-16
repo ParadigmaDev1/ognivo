@@ -7,16 +7,45 @@
     @include s(gap, 97);
     @include s(margin-top, 40);
     align-items: flex-start;
+    @media (max-width: $tab-sm) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "content content" "img1 img2";
+      @include s(gap, 10);
+      @include s(margin-top, 12);
+    }
     .image-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       @include s(gap, 10);
+      position: relative;
       & > img {
         @include s(width, 29);
         @include s(height, 12);
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
       }
       &:nth-child(1) {
+        @media (max-width: $tab-sm) {
+          grid-area: img1;
+          display: flex;
+          align-items: flex-start;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            @include s(right, -18);
+            background-image: url("../img/icons/union-red-top.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            @include s(width, 24);
+            @include s(height, 10);
+          }
+        }
         .image-wrapper {
           mask: url("../img/home/about/mask1.png") center/cover no-repeat;
         }
@@ -24,15 +53,21 @@
       &:nth-child(3) {
         display: flex;
         justify-content: flex-end;
+        @media (max-width: $tab-sm) {
+          grid-area: img2;
+          align-items: flex-end;
+        }
         .image-wrapper {
           mask: url("../img/home/about/mask2.png") center/cover no-repeat;
         }
       }
       .image-wrapper {
-        @include s(width, 283);
-        @include s(height, 505);
+        @include s(width, 123);
+        @include s(height, 220);
         display: flex;
         align-items: center;
+        @media (max-width: $tab-sm) {
+        }
         img {
           width: 120%;
           height: 100%;
@@ -45,11 +80,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      @media (max-width: $tab-sm) {
+        grid-area: content;
+        @include s(margin-bottom, 36);
+      }
       .title {
         text-align: center;
         @include h1;
         color: var(--accent-color);
         @include s(margin-top, 24);
+        @media (max-width: $tab-sm) {
+          @include s(margin-top, 12);
+        }
       }
       .separator {
         @include s(margin-top, 28);
@@ -57,6 +99,9 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        @media (max-width: $tab-sm) {
+          @include s(margin-top, 16);
+        }
         &:after {
           content: "";
           @include s(width, 303);
@@ -67,6 +112,9 @@
           top: 0;
           bottom: 0;
           margin: auto;
+          @media (max-width: $tab-sm) {
+            @include s(width, 137);
+          }
         }
         &:before {
           content: "";
@@ -78,6 +126,9 @@
           top: 0;
           bottom: 0;
           margin: auto;
+          @media (max-width: $tab-sm) {
+            @include s(width, 137);
+          }
         }
         img {
           @include s(width, 29);
@@ -89,6 +140,11 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         @include s(gap, 61);
+        @media (max-width: $tab-sm) {
+          grid-template-columns: 1fr;
+          @include s(margin-top, 24);
+          @include s(gap, 24);
+        }
         p {
           @include descr-m;
           text-transform: uppercase;
@@ -103,6 +159,9 @@
       }
       .btn {
         @include s(margin-top, 52);
+        @media (max-width: $tab-sm) {
+          @include s(margin-top, 24);
+        }
       }
     }
   }

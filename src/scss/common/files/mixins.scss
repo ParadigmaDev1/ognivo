@@ -132,6 +132,12 @@
   line-height: 115%;
   font-weight: 400;
 }
+@mixin normal-s {
+  font-family: "Inter", sans-serif;
+  @include s(font-size, 14);
+  line-height: 136%;
+  font-weight: 400;
+}
 @mixin display-xl {
   font-family: "spsl";
   @include s(font-size, 88);

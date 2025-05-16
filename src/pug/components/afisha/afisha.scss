@@ -3,6 +3,9 @@
 .afisha {
   overflow: hidden;
   @include padding(96, 0, 96);
+  @media (max-width: $tab-sm) {
+    @include padding(64, 0, 64);
+  }
   .afisha-inner {
     .afisha-top {
       display: flex;
@@ -17,10 +20,18 @@
           &::nth-child(1) {
             @include s(height, 20);
             @include s(width, 123);
+            @media (max-width: $tab-sm) {
+              @include s(height, 16);
+              @include s(width, 101);
+            }
           }
           &::nth-child(2) {
             @include s(height, 16);
             @include s(width, 29);
+            @media (max-width: $tab-sm) {
+              @include s(height, 12);
+              @include s(width, 22);
+            }
           }
         }
       }
@@ -28,20 +39,28 @@
         @include s(margin-top, 7);
         @include h1;
         color: var(--accent-color);
+        @media (max-width: $tab-sm) {
+          @include s(margin-top, 16);
+        }
       }
       .descr {
         @include s(margin-top, 28);
         text-transform: uppercase;
         @include descr-s;
         color: var(--hover-color);
+        @media (max-width: $tab-sm) {
+          @include s(margin-top, 16);
+        }
       }
     }
     .afisha-swiper-wrapper {
       width: 100%;
       position: relative;
-      @include s(margin-top, 294);
       @include s(max-width, 1115);
       margin: calc(94 / var(--screensize) * 100vw) auto 0;
+      @media (max-width: $tab-sm) {
+        margin: calc(60 / var(--screensize) * 100vw) auto 0;
+      }
     }
     .navigation {
       position: absolute;
@@ -61,7 +80,9 @@
       right: 0;
       bottom: 0;
       @include s(height, 440);
-
+      @media (max-width: $tab-sm) {
+        @include s(height, 280);
+      }
       .swiper-slide {
         transition: transform var(--trs-cubic-300), opacity var(--trs-cubic-300);
         transform: scale(0.8);
@@ -97,6 +118,10 @@
           @include s(width, 64);
           opacity: 0;
           transition: var(--trs-cubic-300);
+          @media (max-width: $tab-sm) {
+            @include s(height, 22);
+            @include s(width, 44);
+          }
         }
         &.swiper-slide-outer-prev {
           transform: translateX(150%) scale(0.8);
@@ -116,7 +141,9 @@
         }
         &.swiper-slide-next {
           transform: translateX(-50%) scale(1);
-
+          @media (max-width: $tab-sm) {
+            transform: translateX(-65%) scale(1);
+          }
           &:after {
             background: linear-gradient(
               280deg,
@@ -128,7 +155,9 @@
         }
         &.swiper-slide-prev {
           transform: translateX(50%) scale(1);
-
+          @media (max-width: $tab-sm) {
+            transform: translateX(65%) scale(1);
+          }
           &:after {
             opacity: 1;
           }
@@ -141,6 +170,9 @@
           transform: translateX(100%) scale(0.8);
           z-index: -1;
           opacity: 1 !important;
+          @media (max-width: $tab-sm) {
+            opacity: 0 !important;
+          }
           &:after {
             opacity: 1;
           }
@@ -149,6 +181,9 @@
           transform: translateX(-100%) scale(0.8);
           z-index: -1;
           opacity: 1 !important;
+          @media (max-width: $tab-sm) {
+            opacity: 0 !important;
+          }
           &:after {
             background: linear-gradient(
               280deg,
@@ -172,6 +207,10 @@
       left: 0;
       right: 0;
       margin: calc(25 / var(--screensize) * 100vw) auto 0;
+      @media (max-width: $tab-sm) {
+        margin: calc(14 / var(--screensize) * 100vw) auto 0;
+        @include s(max-width, 262);
+      }
       .bg {
         position: absolute;
         left: 0;
@@ -183,6 +222,10 @@
         img {
           @include s(width, 80);
           @include s(height, 80);
+          @media (max-width: $tab-sm) {
+            @include s(width, 56);
+            @include s(height, 56);
+          }
         }
       }
       .swiper-slide {
@@ -193,6 +236,9 @@
           @include gtc(90, 1fr, 90);
           @include s(gap, 70);
           align-items: flex-end;
+          @media (max-width: $tab-sm) {
+            @include s(gap, 12);
+          }
           .date {
             @include s(width, 80);
             @include s(height, 80);
@@ -201,6 +247,11 @@
             justify-content: center;
             @include descr-xl;
             color: var(--accent-color);
+            @media (max-width: $tab-sm) {
+              @include s(width, 56);
+              @include s(height, 56);
+              @include descr-l;
+            }
           }
           .time {
             text-align: right;
@@ -228,6 +279,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
+
         &:after {
           content: "";
           @include s(width, 175);
@@ -238,6 +290,9 @@
           top: 0;
           bottom: 0;
           margin: auto;
+          @media (max-width: $tab-sm) {
+            @include s(width, 108);
+          }
         }
         &:before {
           content: "";
@@ -249,16 +304,28 @@
           top: 0;
           bottom: 0;
           margin: auto;
+          @media (max-width: $tab-sm) {
+            @include s(width, 108);
+          }
         }
         img {
           @include s(width, 29);
           @include s(height, 16);
+          @media (max-width: $tab-sm) {
+            @include s(width, 24);
+            @include s(height, 10);
+          }
         }
       }
     }
     .afisha-btn {
       width: fit-content;
       margin: calc(24 / var(--screensize) * 100vw) auto 0;
+      @media (max-width: $tab-sm) {
+        margin: calc(12 / var(--screensize) * 100vw) auto 0;
+        @include s(height, 40);
+        @include descr-s;
+      }
     }
   }
 }

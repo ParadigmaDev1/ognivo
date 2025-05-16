@@ -4,36 +4,11 @@
   @include s(margin-top, 96);
   position: relative;
   @include s(height, 694);
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    @include s(height, 128);
-    z-index: 2;
-    pointer-events: none;
+  @media (max-width: $tab-sm) {
+    @include s(margin-top, 64);
+    height: auto;
   }
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    @include s(height, 228);
-    z-index: 1;
-    pointer-events: none;
-  }
+
   .bg {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -43,10 +18,58 @@
     bottom: 0;
     right: 0;
 
+    .bg-wrapper {
+      position: relative;
+      @include s(height, 694);
+      @media (max-width: $tab-sm) {
+        @include s(height, 517);
+      }
+      & > div {
+        height: 100%;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        @include s(height, 128);
+        z-index: 2;
+        pointer-events: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        @include s(height, 228);
+        z-index: 1;
+        pointer-events: none;
+      }
+    }
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 1fr;
+      @include s(gap, 10);
+      @include s(margin-top, 237);
+    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      @media (max-width: $tab-sm) {
+        @include s(height, 517);
+      }
     }
   }
   .home-format-inner {
@@ -59,15 +82,41 @@
     height: 100%;
     @include s(padding-top, 44);
     @include s(padding-bottom, 44);
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "col2" "col1" "col3";
+      padding-top: 0;
+      padding-bottom: 0;
+    }
     .col {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
       height: 100%;
+      &:nth-child(1),
+      &:nth-child(3) {
+        @media (max-width: $tab-sm) {
+          @include s(height, 496);
+          @include padding(28, 0);
+        }
+      }
+      &:nth-child(1) {
+        @media (max-width: $tab-sm) {
+          grid-area: col1;
+        }
+      }
+      &:nth-child(3) {
+        @media (max-width: $tab-sm) {
+          grid-area: col3;
+        }
+      }
       &:nth-child(2) {
         align-items: center;
         justify-content: center;
+        @media (max-width: $tab-sm) {
+          grid-area: col2;
+        }
         .content-wrapper {
           mask: url("../img/mask-format.svg") center/cover no-repeat;
           @include s(height, 469);
@@ -77,6 +126,13 @@
           flex-direction: column;
           align-items: center;
           @include padding(49, 39, 36);
+          @media (max-width: $tab-sm) {
+            mask: none;
+            background: none;
+            padding: 0;
+            height: fit-content;
+            width: 100%;
+          }
           .union-wrapper {
             display: flex;
             align-items: center;
@@ -85,9 +141,18 @@
             @include s(padding-bottom, 20);
             border-bottom: 1px solid var(--lines-red-color);
             width: 100%;
+            @media (max-width: $tab-sm) {
+              @include s(gap, 6);
+
+              @include s(padding-bottom, 12);
+            }
             img {
               @include s(height, 16);
               @include s(width, 29);
+              @media (max-width: $tab-sm) {
+                @include s(height, 12);
+                @include s(width, 22);
+              }
             }
             p {
               text-transform: uppercase;
@@ -100,12 +165,18 @@
             color: var(--accent-color);
             @include h1;
             @include s(margin-top, 38);
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 28);
+            }
           }
           .descr {
             @include s(margin-top, 34);
             @include descr-m;
             text-align: center;
             text-transform: uppercase;
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 16);
+            }
           }
         }
       }
@@ -154,6 +225,10 @@
         .btn {
           @include s(margin-top, 24);
           width: fit-content;
+          @media (max-width: $tab-sm) {
+            @include s(height, 40);
+            @include descr-s;
+          }
         }
       }
     }

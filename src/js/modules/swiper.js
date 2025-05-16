@@ -7,7 +7,7 @@ import {
   EffectFade,
   Autoplay,
 } from "swiper/modules";
-import { updateVisibleSlides } from "../helpers/updateVisibleSlides.js";
+import { scrollToCenter } from "../helpers/scrollToCenter.js";
 import {
   updateCustomSlideClasses,
   updateCustomPaginationClasses,
@@ -86,6 +86,16 @@ export const swiper = () => {
         updateCustomSlideClasses(swiper);
       },
     },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.6,
+        allowTouchMove: true,
+      },
+      767: {
+        allowTouchMove: false,
+        slidesPerView: 3.6,
+      },
+    },
   });
   const afishaDateSwiper = new Swiper(".afisha-date-swiper", {
     modules: [EffectFade, Controller],
@@ -106,9 +116,8 @@ export const swiper = () => {
     const featuresContentSwiperObj = featuresSwiperWrapper.querySelector(
       ".features-content-swiper"
     );
-    const customPagination = featuresSwiperWrapper.querySelector(
-      ".custom-pagination.container"
-    );
+    const customPagination =
+      featuresSwiperWrapper.querySelector(".custom-pagination");
     const paginationBtns =
       customPagination.querySelectorAll(".pagination-button");
 
@@ -127,6 +136,12 @@ export const swiper = () => {
         },
         slideChange(swiper) {
           updateCustomPaginationClasses(swiper); // Обновление при смене слайда
+          const activePagination = customPagination.querySelector(
+            ".pagination-button.active"
+          );
+          if (window.innerWidth <= 767) {
+            scrollToCenter(activePagination, customPagination);
+          }
         },
       },
     });
@@ -184,6 +199,18 @@ export const swiper = () => {
     on: {
       init(swiper) {
         swiper.slideTo(1);
+      },
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.1,
+        spaceBetween: 10,
+        centeredSlides: true,
+      },
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+        centeredSlides: false,
       },
     },
   });

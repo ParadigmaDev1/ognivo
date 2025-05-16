@@ -7,6 +7,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  @media (max-width: $tab-sm) {
+    mask: url("../img/mask-hero-mob.png") bottom/cover no-repeat;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -45,6 +48,9 @@
     left: 0;
     z-index: 2;
     mix-blend-mode: screen;
+    @media (max-width: $tab-sm) {
+      display: none;
+    }
   }
   .fire2 {
     @include s(width, 475);
@@ -54,6 +60,9 @@
     right: 0;
     z-index: 2;
     mix-blend-mode: screen;
+    @media (max-width: $tab-sm) {
+      display: none;
+    }
   }
   .hero-swiper {
     position: absolute;
@@ -96,6 +105,9 @@
       justify-content: center;
       z-index: 2;
       @include s(gap, 9);
+      @media (max-width: $tab-sm) {
+        @include s(bottom, 44);
+      }
       .current,
       .total {
         font-family: "spsl";
@@ -146,6 +158,11 @@
     align-items: center;
     justify-content: space-between;
     flex: 1;
+    @media (max-width: $tab-sm) {
+      @include s(gap, 356);
+      @include s(padding-top, 74);
+      @include s(padding-bottom, 78);
+    }
     .address {
       display: flex;
       flex-direction: column;
@@ -185,6 +202,9 @@
       flex-direction: column;
       align-items: center;
       margin: 0 auto;
+      @media (max-width: $tab-sm) {
+        width: 100%;
+      }
       img {
         @include s(width, 36);
         @include s(height, 20);
@@ -199,6 +219,9 @@
           color: var(--white-color);
           @include display-xl;
           text-align: center;
+          @media (max-width: $tab-sm) {
+            @include h1;
+          }
         }
       }
     }

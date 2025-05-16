@@ -1,8 +1,10 @@
 mixin home-format()
     .home-format
         .bg 
-            img(src="./img/home/format/bg1.jpg", alt="bg")
-            img(src="./img/home/format/bg2.jpg", alt="bg")
+            .bg-wrapper
+                img(src="./img/home/format/bg1.jpg", alt="bg" data-parallax="right")
+            .bg-wrapper
+                img(src="./img/home/format/bg2.jpg", alt="bg" data-parallax="left")
         .home-format-inner.container
             .col 
                 p.subtitle Общественная баня

@@ -1,0 +1,35 @@
+@use "src/scss/common/files/mixins" as *;
+
+.alert-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include s(width, 172);
+  @include s(height, 172);
+  .alert-outer,
+  .alert-inner {
+    position: absolute;
+    top: 0;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .alert-outer {
+    @include s(width, 172);
+    @include s(height, 172);
+    mask: url("../img/icons/nav-bg.svg") center/cover no-repeat;
+  }
+  .alert-inner {
+    @include s(width, 148);
+    @include s(height, 148);
+    mask: url("../img/icons/nav-bg.svg") center/cover no-repeat;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

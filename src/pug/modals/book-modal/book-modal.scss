@@ -1,0 +1,98 @@
+@use "src/scss/common/files/mixins" as *;
+
+.book-modal {
+  .modal-content-wrapper {
+    @include s(width, 1344);
+    @include s(height, 672);
+    @include padding(115);
+    overflow: visible;
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: url("../img/icons/book-border.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include s(top, 10);
+      @include s(right, 10);
+      @include s(bottom, 10);
+      @include s(left, 10);
+      z-index: -1;
+    }
+
+    .title {
+      @include h2;
+      color: var(--accent-color);
+      text-align: center;
+    }
+    .separator {
+      @include s(margin-top, 28);
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      &:after {
+        content: "";
+        @include s(width, 531);
+        height: 1px;
+        background: var(--hover-color);
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      &:before {
+        content: "";
+        @include s(width, 531);
+        height: 1px;
+        background: var(--hover-color);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      img {
+        @include s(width, 29);
+        @include s(height, 16);
+      }
+    }
+    .book-list {
+      @include s(margin-top, 48);
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .book-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:hover {
+          .btn {
+            background: var(--hover-color);
+          }
+        }
+        .alert-img {
+          @include s(width, 196);
+          @include s(height, 196);
+          .alert-outer {
+            @include s(width, 196);
+            @include s(height, 196);
+          }
+          .alert-inner {
+            @include s(width, 168);
+            @include s(height, 168);
+          }
+        }
+        .book-item-title {
+          @include s(margin-top, 20);
+          color: var(--accent-color);
+          @include h5;
+        }
+        .btn {
+          @include s(margin-top, 24);
+        }
+      }
+    }
+  }
+}

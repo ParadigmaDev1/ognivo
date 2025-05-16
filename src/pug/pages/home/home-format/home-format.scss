@@ -1,0 +1,161 @@
+@use "src/scss/common/files/mixins" as *;
+
+.home-format {
+  @include s(margin-top, 96);
+  position: relative;
+  @include s(height, 694);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    @include s(height, 128);
+    z-index: 2;
+    pointer-events: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    @include s(height, 228);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .bg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .home-format-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    @include gtc(1fr, 328, 1fr);
+    @include s(gap, 44);
+    align-items: center;
+    height: 100%;
+    @include s(padding-top, 44);
+    @include s(padding-bottom, 44);
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      &:nth-child(2) {
+        align-items: center;
+        justify-content: center;
+        .content-wrapper {
+          mask: url("../img/mask-format.svg") center/cover no-repeat;
+          @include s(height, 469);
+          @include s(width, 328);
+          background: var(--white-color);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          @include padding(49, 39, 36);
+          .union-wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            @include s(gap, 10);
+            @include s(padding-bottom, 20);
+            border-bottom: 1px solid var(--lines-red-color);
+            width: 100%;
+            img {
+              @include s(height, 16);
+              @include s(width, 29);
+            }
+            p {
+              text-transform: uppercase;
+              @include descr-s;
+              color: var(--accent-color);
+            }
+          }
+          .title {
+            text-align: center;
+            color: var(--accent-color);
+            @include h1;
+            @include s(margin-top, 38);
+          }
+          .descr {
+            @include s(margin-top, 34);
+            @include descr-m;
+            text-align: center;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .subtitle {
+        color: var(--white-color);
+        text-transform: uppercase;
+        @include descr-s;
+        position: relative;
+        @include padding(0, 29);
+        &:before {
+          content: "";
+          background-image: url("../img/icons/fire-left.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include s(width, 13);
+          @include s(height, 9);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          left: 0;
+        }
+        &:after {
+          content: "";
+          background-image: url("../img/icons/fire-right.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include s(width, 13);
+          @include s(height, 9);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          right: 0;
+        }
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title {
+          color: var(--white-color);
+          text-align: center;
+          @include h2;
+        }
+        .btn {
+          @include s(margin-top, 24);
+          width: fit-content;
+        }
+      }
+    }
+  }
+}

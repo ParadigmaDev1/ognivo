@@ -1,0 +1,20 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "hero", "home-about", "home-format", "alert-img", "afisha", "home-features", "home-news", "home-alert", "contacts", "map", "footer", "menu", "book-modal"])
+block header 
+  +header()
+  +menu()
+block content
+  +hero()
+  +home-about()
+  +home-format()
+  +afisha()
+  +home-features()
+  +home-news()
+  +home-alert()
+  +contacts()
+block footer 
+  +footer()
+block modals 
+  +book-modal()

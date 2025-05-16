@@ -1,0 +1,190 @@
+@import "./variables.scss";
+
+@mixin s($property, $value) {
+  #{$property}: calc(#{$value} / var(--screensize) * 100vw);
+}
+@mixin gtc($values...) {
+  $result: ();
+
+  @each $value in $values {
+    @if str-index(#{$value}, "fr") {
+      $result: append($result, $value, space);
+    } @else {
+      $result: append(
+        $result,
+        calc(#{$value} / var(--screensize) * 100vw),
+        space
+      );
+    }
+  }
+
+  grid-template-columns: $result;
+}
+@mixin borr($values...) {
+  $result: ();
+
+  @each $value in $values {
+    $result: append(
+      $result,
+      calc(#{$value} / var(--screensize) * 100vw),
+      space
+    );
+  }
+
+  border-radius: $result;
+}
+@mixin padding($values...) {
+  $result: ();
+
+  @each $value in $values {
+    $result: append(
+      $result,
+      calc(#{$value} / var(--screensize) * 100vw),
+      space
+    );
+  }
+
+  padding: $result;
+}
+@mixin margin($values...) {
+  $result: ();
+
+  @each $value in $values {
+    $result: append(
+      $result,
+      calc(#{$value} / var(--screensize) * 100vw),
+      space
+    );
+  }
+
+  margin: $result;
+}
+
+@mixin h1 {
+  font-family: "spsl";
+  @include s(font-size, 72);
+  @include s(letter-spacing, -2);
+  line-height: 72%;
+  font-weight: 400;
+  @media (max-width: $tab-sm) {
+    @include s(font-size, 44);
+    @include s(letter-spacing, -1);
+  }
+}
+@mixin h2 {
+  font-family: "spsl";
+  @include s(font-size, 64);
+  line-height: 72%;
+  font-weight: 400;
+  @media (max-width: $tab-sm) {
+    @include s(font-size, 40);
+  }
+}
+@mixin h3 {
+  font-family: "spsl";
+  @include s(font-size, 56);
+  line-height: 72%;
+  font-weight: 400;
+  @media (max-width: $tab-sm) {
+    @include s(font-size, 36);
+    line-height: 80%;
+  }
+}
+@mixin h4 {
+  font-family: "spsl";
+  @include s(font-size, 48);
+  line-height: 80%;
+  font-weight: 400;
+  @media (max-width: $tab-sm) {
+    @include s(font-size, 32);
+    line-height: 88%;
+  }
+}
+@mixin h5 {
+  font-family: "spsl";
+  @include s(font-size, 40);
+  line-height: 80%;
+  font-weight: 400;
+  @media (max-width: $tab-sm) {
+    @include s(font-size, 28);
+    line-height: 88%;
+  }
+}
+@mixin h6 {
+  font-family: "spsl";
+  @include s(font-size, 36);
+  line-height: 80%;
+  font-weight: 400;
+  @media (max-width: $tab-sm) {
+    @include s(font-size, 26);
+    line-height: 88%;
+  }
+}
+@mixin normal-m {
+  font-family: "Inter", sans-serif;
+  @include s(font-size, 16);
+  line-height: 136%;
+  font-weight: 400;
+}
+@mixin normal-xs {
+  font-family: "Inter", sans-serif;
+  @include s(font-size, 12);
+  line-height: 115%;
+  font-weight: 400;
+}
+@mixin display-xl {
+  font-family: "spsl";
+  @include s(font-size, 88);
+  line-height: 72%;
+  font-weight: 400;
+  @include s(letter-spacing, -2);
+}
+@mixin display-l {
+  font-family: "spsl";
+  @include s(font-size, 56);
+  line-height: 88%;
+  font-weight: 400;
+  @include s(letter-spacing, -1);
+}
+@mixin display-m {
+  font-family: "spsl";
+  @include s(font-size, 36);
+  line-height: 88%;
+  font-weight: 400;
+}
+@mixin display-s {
+  font-family: "spsl";
+  @include s(font-size, 28);
+  line-height: 88%;
+  font-weight: 400;
+}
+@mixin descr-xl {
+  font-family: "Inter", sans-serif;
+  @include s(font-size, 24);
+  line-height: 88%;
+  font-weight: 500;
+}
+@mixin descr-l {
+  font-family: "Inter", sans-serif;
+  @include s(font-size, 18);
+  line-height: 88%;
+  font-weight: 600;
+}
+@mixin descr-m {
+  font-family: "Inter", sans-serif;
+  @include s(font-size, 14);
+  line-height: 148%;
+  font-weight: 600;
+}
+@mixin descr-s {
+  font-family: "Inter", sans-serif;
+  @include s(font-size, 12);
+  line-height: 115%;
+  font-weight: 600;
+}
+@mixin descr-xs {
+  font-family: "Inter", sans-serif;
+  @include s(font-size, 10);
+  line-height: 128%;
+  font-weight: 600;
+}

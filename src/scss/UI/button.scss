@@ -1,0 +1,82 @@
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.btn {
+  transition: var(--trs-cubic-600);
+  text-transform: uppercase;
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &.nav {
+    @include s(width, 56);
+    @include s(height, 56);
+    svg {
+      @include s(width, 56);
+      @include s(height, 56);
+    }
+  }
+  &.primary {
+    background: var(--accent-color);
+    border-radius: 999px;
+    @include padding(0, 32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include s(gap, 16);
+    color: var(--white-color);
+    &:hover {
+      background: var(--hover-color);
+    }
+  }
+  &.outline {
+    border: 1px solid var(--accent-color);
+    border-radius: 999px;
+    @include padding(0, 32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include s(gap, 16);
+    color: var(--accent-color);
+    &:hover {
+      border-color: var(--hover-color);
+      color: var(--hover-color);
+      svg {
+        path {
+          stroke: var(--hover-color);
+        }
+        circle {
+          stroke: var(--hover-color);
+        }
+      }
+    }
+  }
+  &.tab {
+    @include h1;
+    border-bottom: 4px dotted var(--dark-color);
+    text-transform: capitalize;
+    &:hover {
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+    &.active {
+      color: var(--accent-color);
+      border-color: rgba(0, 0, 0, 0);
+    }
+  }
+  &.s {
+    @include s(height, 40);
+    @include descr-s;
+  }
+  &.m {
+    @include s(height, 48);
+    @include descr-m;
+  }
+  &.l {
+    @include s(height, 56);
+    @include descr-m;
+  }
+}

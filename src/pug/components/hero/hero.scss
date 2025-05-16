@@ -1,0 +1,206 @@
+@use "src/scss/common/files/mixins" as *;
+
+.hero {
+  mask: url("../img/mask-hero.svg") bottom/cover no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    @include s(height, 296);
+    z-index: 2;
+    pointer-events: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    @include s(height, 228);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .fire1 {
+    @include s(width, 475);
+    @include s(height, 349);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    mix-blend-mode: screen;
+  }
+  .fire2 {
+    @include s(width, 475);
+    @include s(height, 349);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    mix-blend-mode: screen;
+  }
+  .hero-swiper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      position: relative;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .navigation {
+      position: absolute;
+      bottom: 0;
+      @include s(bottom, 123);
+      z-index: 3;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
+    .pagination-wrapper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      @include s(bottom, 86);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      @include s(gap, 9);
+      .current,
+      .total {
+        font-family: "spsl";
+        font-weight: 400;
+        @include s(font-size, 20);
+        line-height: 72%;
+      }
+      .current {
+        color: var(--accent-color);
+      }
+      .total {
+        color: var(--white-color);
+        @include s(margin-left, 8);
+      }
+      .pagination {
+        @include s(width, 160);
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        .swiper-pagination-bullet {
+          position: absolute;
+          width: 100%;
+          border-radius: 0;
+          height: 1px;
+          opacity: 1;
+          background: rgba(255, 255, 255, 0.2);
+          left: 0;
+          top: 0;
+          &.swiper-pagination-bullet-active {
+            animation: slidein 3500ms linear 0ms infinite;
+            background: var(--accent-color);
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+  .hero-inner {
+    position: relative;
+    height: 100%;
+    z-index: 2;
+    @include s(padding-top, 167);
+    @include s(padding-bottom, 115);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    .address {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include s(gap, 6);
+      .image-wrapper {
+        @include s(width, 40);
+        @include s(height, 40);
+        background-image: url("../img/icons/nav-bg.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:before {
+          content: "";
+          position: absolute;
+        }
+        img {
+          @include s(width, 10);
+          @include s(height, 15);
+        }
+      }
+      p {
+        color: var(--white-color);
+        @include s(font-size, 12);
+        font-weight: 600;
+        font-family: "Inter", sans-serif;
+        text-transform: uppercase;
+        line-height: 115%;
+      }
+    }
+    .hero-descr-swiper {
+      @include s(max-width, 888);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      img {
+        @include s(width, 36);
+        @include s(height, 20);
+        @include s(margin-bottom, 12);
+      }
+      .swiper-slide {
+        opacity: 0 !important;
+        &.swiper-slide-active {
+          opacity: 1 !important;
+        }
+        p {
+          color: var(--white-color);
+          @include display-xl;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

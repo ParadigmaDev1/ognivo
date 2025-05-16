@@ -1,0 +1,44 @@
+mixin contacts()
+    .contacts
+        .contacts-inner.container
+            h3 Как нас найти
+            .contacts-content 
+                +map()
+                .content 
+                    .pin-wrapper 
+                        img(src="./img/contacts/text.svg", alt="text")
+                        img(src="./img/contacts/pin.svg", alt="text")
+                    p.address Москва, пл. Киевского Вокзала, 1А
+                    .separator 
+                        img(src="./img/icons/union-red.svg", alt="union")
+                    .places 
+                        p.title Мы находимся в центре города, <br>рядом с удобными транспортными развязками.
+                        .places-list 
+                            .place-item 
+                                img(src="./img/contacts/human.svg", alt="")
+                                p м. Динамо <br>12 мин
+                            .place-item 
+                                img(src="./img/contacts/human.svg", alt="")
+                                p м. Савеловская <br>10 мин
+                            .place-item 
+                                img(src="./img/contacts/car.svg", alt="")
+                                p мы Рядом <br>с ТТК
+                            .place-item 
+                                img(src="./img/contacts/car.svg", alt="")
+                                p Своя парковка <br> для гостей
+                    .btn-wrapper
+                        a(href="#" target='_blank').btn.outline.m
+                            | построить маршрут
+                            <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1044 0.888861C11.644 4.57107 14.4737 7.45192 18.0627 7.97285L18.2496 7.99997L18.0627 8.0271C14.4737 8.54802 11.644 11.4289 11.1044 15.1111M17.803 7.99997L4.02734 7.99997" stroke="#B50000"/>
+                                <circle cx="2.75" cy="8" r="1.5" stroke="#B50000"/>
+                            </svg>
+                    a(href="tel: 8 800 123-45-67").tel 8 800 123-45-67
+                    .dates 
+                        .date-item 
+                            p Ежедневно
+                            p с 10:00 до 02:00
+                        img(src="./img/icons/phone.svg", alt="phone") 
+                        .date-item 
+                            p Call center
+                            p с 10:00 до 02:00

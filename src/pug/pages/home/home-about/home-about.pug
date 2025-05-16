@@ -1,0 +1,29 @@
+mixin home-about()
+    .home-about
+        .home-about-inner.container-sm
+            .image-container 
+                img(src="./img/icons/union-red-top.svg", alt="union")
+                .image-wrapper 
+                    img(src="./img/home/about/img1.jpg", alt="about" data-parallax="right")
+                img(src="./img/icons/union-red-bottom.svg", alt="union")
+            .content 
+                +alert-img({img: "./img/home/about/alert.jpg"})
+                
+                h3.title Здесь разгораются нешуточные страсти!
+                .separator 
+                    img(src="./img/icons/union-red.svg", alt="union")
+                .text 
+                    p 
+                        span И 
+                        | не только банные: в нашей новой сказке воедино сплетутся традиции и инновации, изысканные блюда в головокружительных подачах, шоу, вечеринки и перфомансы.
+                    p 
+                        span В
+                        | сё — на высочайшем уровне и с неведомым ранее сервисом и персонализацией для наших гостей, ведь удивлять — главная страсть команды «ОГНИВА».
+                a(href="#").btn.primary.m
+                    | о комплексе
+                    img(src="./img/icons/arrow-right-outline.svg", alt="arrow") 
+            .image-container 
+                img(src="./img/icons/union-red-top.svg", alt="union")
+                .image-wrapper 
+                    img(src="./img/home/about/img3.jpg", alt="about"  data-parallax="right")
+                img(src="./img/icons/union-red-bottom.svg", alt="union")

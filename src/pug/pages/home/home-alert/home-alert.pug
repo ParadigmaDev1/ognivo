@@ -1,0 +1,12 @@
+mixin home-alert()
+    .home-alert
+        .image-wrapper 
+            img(src="./img/home/alert/bg.jpg", alt="alert")            
+            img(src="./img/home/alert/fire.png", alt="fire")            
+        .home-alert-wrapper
+            .home-alert-wrapper-inner.container
+                img(src="./img/icons/union-top.svg", alt="union")
+                .content 
+                    +alert-img({img: "./img/home/about/alert.jpg"})
+                    p.title В «Огниво» мы с вниманием относимся к возрождению истинных банных традиций, ставя во главу угла уникальный опыт наших гостей
+                    +alert-img({img: "./img/home/alert/img.jpg"})

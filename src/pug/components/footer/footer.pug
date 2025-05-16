@@ -1,0 +1,101 @@
+mixin footer()
+    footer.footer
+        .footer-inner.container 
+            .footer-top 
+                +alert-img({img: "./img/footer/alert.jpg"})
+                p.descr получайте  новости, спецпредложения и расписание мероприятий.
+                p.title Подпишитесь на рассылку
+                form
+                    input(type="text" placeholder="Ваш e-mail")
+                    p.policy Нажимая кнопку, я соглашаюсь с  
+                        a(href="#" target='_blank') Политикой конфиденциальности
+                    button.btn.primary.m подписаться
+            .footer-center 
+                .footer-center-info 
+                    .col 
+                        p.title SPA процедуры
+                        a(href="#").title Аромапарения 
+                        a(href="#").title Кухня и бар 
+                        a(href="#").title Акции
+                        a(href="#").title Сертификаты
+                    .col 
+                        p.title Банный отдых
+                        .link-list 
+                            a(href="#") Мужская баня
+                            a(href="#") VIP зал Сьют
+                            a(href="#") Кабинет 1
+                            a(href="#") Кабинет 2
+                            a(href="#") Кабинет 3
+                    .col 
+                        p.title Информация
+                        .link-list 
+                            a(href="#") Цены
+                            a(href="#") Товары для бани
+                            a(href="#") Новости
+                            a(href="#") Афиша
+                            a(href="#") Контакты
+                            a(href="#") Личный кабинет
+                .footer-center-rating
+                    a(href="#" target="_blank").rating-item
+                        img(src="./img/footer/yandex.svg", alt="") 
+                        .rating-item-content 
+                            p 4,9
+                            .stars 
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                            button Отзывы
+                                <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1044 0.888861C11.644 4.57107 14.4737 7.45192 18.0627 7.97285L18.2496 7.99997L18.0627 8.0271C14.4737 8.54802 11.644 11.4289 11.1044 15.1111M17.803 7.99997L4.02734 7.99997" stroke="white"/>
+                                    <circle cx="2.75" cy="8" r="1.5" stroke="white"/>
+                                </svg>
+                    a(href="#" target="_blank").rating-item
+                        img(src="./img/footer/gis.svg", alt="") 
+                        .rating-item-content 
+                            p 4,9
+                            .stars 
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                            button Отзывы
+                                <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1044 0.888861C11.644 4.57107 14.4737 7.45192 18.0627 7.97285L18.2496 7.99997L18.0627 8.0271C14.4737 8.54802 11.644 11.4289 11.1044 15.1111M17.803 7.99997L4.02734 7.99997" stroke="white"/>
+                                    <circle cx="2.75" cy="8" r="1.5" stroke="white"/>
+                                </svg>
+                    a(href="#" target="_blank").rating-item
+                        img(src="./img/footer/google.svg", alt="") 
+                        .rating-item-content 
+                            p 4,9
+                            .stars 
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                                img(src="./img/icons/star.svg", alt="star")
+                            button Отзывы
+                                <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1044 0.888861C11.644 4.57107 14.4737 7.45192 18.0627 7.97285L18.2496 7.99997L18.0627 8.0271C14.4737 8.54802 11.644 11.4289 11.1044 15.1111M17.803 7.99997L4.02734 7.99997" stroke="white"/>
+                                    <circle cx="2.75" cy="8" r="1.5" stroke="white"/>
+                                </svg>
+            .footer-bottom 
+                .footer-socials 
+                    .socials 
+                        a(href="#" target='_blank') 
+                            img(src="./img/icons/tg-cirlce.svg", alt="")
+                        a(href="#" target='_blank') 
+                            img(src="./img/icons/youtube.svg", alt="")
+                        a(href="#" target='_blank') 
+                            img(src="./img/icons/vk.svg", alt="")
+                .footer-links 
+                    .col 
+                        a(href="#") Политика конфиденциальности 
+                        a(href="#") Публичная оферта
+                    .col 
+                        p © 2025 ИП Подольская Юлия Анатольевна
+                    .col 
+                        a(href="#") Отказ от услуги
+                        a(href="#") Правила посещения

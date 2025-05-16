@@ -1,0 +1,178 @@
+@use "src/scss/common/files/mixins" as *;
+
+.contacts {
+  @include s(margin-bottom, 128);
+
+  .contacts-inner {
+    @include s(margin-top, 52);
+    h3 {
+      @include h1;
+      color: var(--accent-color);
+      text-align: center;
+    }
+    .contacts-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include s(gap, 48);
+      @include s(margin-top, 48);
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .pin-wrapper {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          img {
+            &:nth-child(1) {
+              @include s(width, 181);
+              @include s(height, 36);
+            }
+            &:nth-child(2) {
+              @include s(width, 40);
+              @include s(height, 40);
+            }
+          }
+        }
+        .address {
+          @include h5;
+          text-align: center;
+          @include s(margin-top, 28);
+        }
+        .separator {
+          @include s(margin-top, 28);
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          &:after {
+            content: "";
+            @include s(width, 303);
+            height: 1px;
+            background: var(--hover-color);
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+          }
+          &:before {
+            content: "";
+            @include s(width, 303);
+            height: 1px;
+            background: var(--hover-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+          }
+          img {
+            @include s(width, 29);
+            @include s(height, 16);
+          }
+        }
+        .places {
+          @include s(margin-top, 28);
+          .title {
+            @include descr-m;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .places-list {
+            @include s(margin-top, 12);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            @include s(gap, 12);
+            .place-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              @include s(gap, 6);
+              img {
+                @include s(width, 36);
+                @include s(height, 36);
+              }
+              p {
+                text-transform: uppercase;
+                color: var(--hover-color);
+                @include descr-s;
+                text-align: center;
+              }
+            }
+          }
+        }
+        .btn-wrapper {
+          @include s(margin-top, 30);
+          position: relative;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          &:after {
+            content: "";
+            @include s(width, 171);
+            height: 1px;
+            background: var(--hover-color);
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+          }
+          &:before {
+            content: "";
+            @include s(width, 171);
+            height: 1px;
+            background: var(--hover-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+          }
+          .btn {
+            position: relative;
+            width: fit-content;
+          }
+        }
+        .tel {
+          @include s(margin-top, 60);
+          @include descr-xl;
+        }
+        .dates {
+          display: grid;
+          @include gtc(1fr, 40, 1fr);
+          @include s(gap, 22);
+          @include s(margin-top, 28);
+
+          .date-item {
+            display: flex;
+            flex-direction: column;
+            @include s(gap, 6);
+            &:first-child {
+              p {
+                text-align: right;
+              }
+            }
+            p {
+              &:first-child {
+                color: var(--accent-color);
+                text-transform: uppercase;
+                @include descr-s;
+              }
+              &:last-child {
+                text-transform: uppercase;
+                @include descr-m;
+              }
+            }
+          }
+          img {
+            @include s(width, 40);
+            @include s(height, 40);
+          }
+        }
+      }
+    }
+  }
+}

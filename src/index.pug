@@ -1,0 +1,10 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "footer"])
+block header 
+block content
+  .container(style='display: flex; flex-direction: column; gap: 20px;')
+    a(href="home.html" style="color: #000") Главная 
+block footer 
+    

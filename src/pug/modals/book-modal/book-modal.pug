@@ -1,0 +1,31 @@
+mixin book-modal()
+    .book-modal.modal.perspective 
+        .modal-content-wrapper
+            p.title Что изволите забронировать?
+            .separator 
+                img(src="./img/icons/union-red.svg", alt="union")
+            .book-list 
+                a(href="#").book-item 
+                    +alert-img({img: "./img/home/about/img3.jpg"})
+                    p.book-item-title Входной билет
+                    button.btn.primary.m продолжить
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.1044 0.888861C11.644 4.57107 14.4737 7.45192 18.0627 7.97285L18.2496 7.99997L18.0627 8.0271C14.4737 8.54802 11.644 11.4289 11.1044 15.1111M17.803 7.99997L4.02734 7.99997" stroke="white"/>
+                            <circle cx="2.75" cy="8" r="1.5" stroke="white"/>
+                        </svg>
+                a(href="#").book-item 
+                    +alert-img({img: "./img/home/about/alert.jpg"})
+                    p.book-item-title Кабинет
+                    button.btn.primary.m продолжить
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.1044 0.888861C11.644 4.57107 14.4737 7.45192 18.0627 7.97285L18.2496 7.99997L18.0627 8.0271C14.4737 8.54802 11.644 11.4289 11.1044 15.1111M17.803 7.99997L4.02734 7.99997" stroke="white"/>
+                            <circle cx="2.75" cy="8" r="1.5" stroke="white"/>
+                        </svg>
+                a(href="#").book-item 
+                    +alert-img({img: "./img/home/about/img1.jpg"})
+                    p.book-item-title VIP-апартаменты
+                    button.btn.primary.m продолжить
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.1044 0.888861C11.644 4.57107 14.4737 7.45192 18.0627 7.97285L18.2496 7.99997L18.0627 8.0271C14.4737 8.54802 11.644 11.4289 11.1044 15.1111M17.803 7.99997L4.02734 7.99997" stroke="white"/>
+                            <circle cx="2.75" cy="8" r="1.5" stroke="white"/>
+                        </svg>

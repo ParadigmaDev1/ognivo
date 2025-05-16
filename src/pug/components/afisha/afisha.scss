@@ -1,0 +1,264 @@
+@use "src/scss/common/files/mixins" as *;
+
+.afisha {
+  overflow: hidden;
+  @include padding(96, 0, 96);
+  .afisha-inner {
+    .afisha-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .union-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include s(gap, 6);
+        img {
+          &::nth-child(1) {
+            @include s(height, 20);
+            @include s(width, 123);
+          }
+          &::nth-child(2) {
+            @include s(height, 16);
+            @include s(width, 29);
+          }
+        }
+      }
+      .title {
+        @include s(margin-top, 7);
+        @include h1;
+        color: var(--accent-color);
+      }
+      .descr {
+        @include s(margin-top, 28);
+        text-transform: uppercase;
+        @include descr-s;
+        color: var(--hover-color);
+      }
+    }
+    .afisha-swiper-wrapper {
+      width: 100%;
+      position: relative;
+      @include s(margin-top, 294);
+      @include s(max-width, 1115);
+      margin: calc(94 / var(--screensize) * 100vw) auto 0;
+    }
+    .navigation {
+      position: absolute;
+      @include s(top, 190);
+      z-index: 3;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      left: 0;
+      right: 0;
+    }
+    .afisha-swiper {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @include s(height, 440);
+
+      .swiper-slide {
+        transition: transform var(--trs-cubic-300), opacity var(--trs-cubic-300);
+        transform: scale(0.8);
+        z-index: 1;
+        opacity: 0 !important;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 100%
+          );
+          opacity: 0;
+          transition: var(--trs-cubic-300);
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          z-index: 2;
+          background-image: url("../img/afisha/substr.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include s(height, 32);
+          @include s(width, 64);
+          opacity: 0;
+          transition: var(--trs-cubic-300);
+        }
+        &.swiper-slide-outer-prev {
+          transform: translateX(150%) scale(0.8);
+          z-index: -1;
+        }
+        &.swiper-slide-outer-next {
+          transform: translateX(-150%) scale(0.8);
+          z-index: -1;
+        }
+        &.swiper-slide-active {
+          transform: scale(1.3);
+          z-index: 2;
+          opacity: 1 !important;
+          &:before {
+            opacity: 1;
+          }
+        }
+        &.swiper-slide-next {
+          transform: translateX(-50%) scale(1);
+
+          &:after {
+            background: linear-gradient(
+              280deg,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 1) 100%
+            );
+            opacity: 1;
+          }
+        }
+        &.swiper-slide-prev {
+          transform: translateX(50%) scale(1);
+
+          &:after {
+            opacity: 1;
+          }
+        }
+        &.swiper-slide-prev,
+        &.swiper-slide-next {
+          opacity: 1 !important;
+        }
+        &.swiper-slide-before-prev {
+          transform: translateX(100%) scale(0.8);
+          z-index: -1;
+          opacity: 1 !important;
+          &:after {
+            opacity: 1;
+          }
+        }
+        &.swiper-slide-after-next {
+          transform: translateX(-100%) scale(0.8);
+          z-index: -1;
+          opacity: 1 !important;
+          &:after {
+            background: linear-gradient(
+              280deg,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 1) 100%
+            );
+            opacity: 1;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .afisha-date-swiper {
+      position: relative;
+      @include s(max-width, 400);
+      z-index: 4;
+      left: 0;
+      right: 0;
+      margin: calc(25 / var(--screensize) * 100vw) auto 0;
+      .bg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          @include s(width, 80);
+          @include s(height, 80);
+        }
+      }
+      .swiper-slide {
+        opacity: 0 !important;
+        transition: opacity var(--trs-cubic-300);
+        .date-wrapper {
+          display: grid;
+          @include gtc(90, 1fr, 90);
+          @include s(gap, 70);
+          align-items: flex-end;
+          .date {
+            @include s(width, 80);
+            @include s(height, 80);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include descr-xl;
+            color: var(--accent-color);
+          }
+          .time {
+            text-align: right;
+          }
+          .time,
+          .mounth {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            @include descr-s;
+            @include s(padding-bottom, 12);
+          }
+        }
+        .descr {
+          text-align: center;
+          @include display-s;
+          @include s(margin-top, 13);
+        }
+        &.swiper-slide-active {
+          opacity: 1 !important;
+        }
+      }
+      .separator {
+        @include s(margin-top, 28);
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        &:after {
+          content: "";
+          @include s(width, 175);
+          height: 1px;
+          background: var(--hover-color);
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        &:before {
+          content: "";
+          @include s(width, 175);
+          height: 1px;
+          background: var(--hover-color);
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        img {
+          @include s(width, 29);
+          @include s(height, 16);
+        }
+      }
+    }
+    .afisha-btn {
+      width: fit-content;
+      margin: calc(24 / var(--screensize) * 100vw) auto 0;
+    }
+  }
+}

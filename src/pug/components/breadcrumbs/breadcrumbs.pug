@@ -1,0 +1,7 @@
+mixin breadcrumbs(links)
+    .breadcrumbs.container 
+        each link,index in links
+            a(href=link.link) 
+                | #{link.text}
+                img(src="./img/icons/arrow-right-outline-beige.svg", alt="arrow")
+

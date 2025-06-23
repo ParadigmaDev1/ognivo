@@ -1,5 +1,5 @@
-mixin contacts()
-    .contacts
+mixin contacts(data = {})
+    .contacts&attributes(attributes)
         .contacts-inner.container
             h3 Как нас найти
             .contacts-content 
@@ -42,3 +42,19 @@ mixin contacts()
                         .date-item 
                             p Call center
                             p с 10:00 до 02:00
+            if data.departaments
+                .contacts-departments
+                    .contacts-departament__item 
+                        +alert-img({img: "./img/home/about/alert.jpg"})
+                        .contacts-departament__item-text 
+                            p Название отдела
+                            a(href="mailto:sales_ognivo@yandex.ru") 
+                                img(src="./img/icons/mail.svg", alt="mail")
+                                | sales_ognivo@yandex.ru
+                    .contacts-departament__item 
+                        +alert-img({img: "./img/home/about/alert.jpg"})
+                        .contacts-departament__item-text 
+                            p Название отдела
+                            a(href="mailto:sales_ognivo@yandex.ru") 
+                                img(src="./img/icons/mail.svg", alt="mail")
+                                | sales_ognivo@yandex.ru

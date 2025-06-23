@@ -28,5 +28,6 @@ mixin head(styles = [])
     //- Подключение стилей
     <link href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css" rel="stylesheet">
     link(rel="stylesheet", href=`./css/style.css`)
+    <script src="https://api-maps.yandex.ru/v3/?apikey=43191fbc-c80b-4bf4-98ef-b14487ccd9d8&lang=ru_RU"></script>
     each style in styles
       link(rel="stylesheet", href=`./css/${style}.css`)

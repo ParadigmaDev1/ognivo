@@ -1,0 +1,79 @@
+@use "src/scss/common/files/mixins" as *;
+
+.policy {
+  @include s(padding-top, 152);
+  @include s(padding-bottom, 128);
+  .policy-inner {
+    h1 {
+      color: var(--accent-color);
+      @include h2;
+      text-align: center;
+    }
+    .policy-content {
+      display: grid;
+      @include gtc(1fr, 318);
+      @include s(gap, 48);
+      @include s(margin-top, 48);
+      .policy-text {
+        h6 {
+          @include descr-m;
+          text-transform: uppercase;
+        }
+        h3 {
+          @include s(margin-top, 48);
+          font-weight: 400;
+          @include s(font-size, 36);
+          line-height: 88%;
+          span {
+            color: var(--accent-color);
+          }
+        }
+        ol {
+          @include s(margin-top, 16);
+          display: flex;
+          flex-direction: column;
+          @include s(gap, 6);
+          list-style: none;
+          li {
+            @include normal-m;
+            counter-increment: section;
+            &:before {
+              content: "1." counter(section) " ";
+              font-weight: 700;
+              @include normal-m;
+              color: var(--accent-color);
+            }
+            span {
+              color: var(--accent-color);
+            }
+          }
+        }
+      }
+      .policy-menu {
+        .sticky-block {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          @include s(gap, 16);
+          border: 1px solid var(--lines-gold-color);
+          @include padding(28);
+          .policy-meny__link {
+            transition: var(--trs-cubic-300);
+            text-align: left;
+            @include descr-m;
+            text-transform: uppercase;
+            span {
+              color: var(--accent-color);
+            }
+            &:hover {
+              color: var(--accent-color);
+            }
+            &.active {
+              color: var(--accent-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

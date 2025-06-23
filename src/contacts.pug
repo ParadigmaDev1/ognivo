@@ -1,0 +1,14 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "breadcrumbs", "alert-img", "contacts", "map", "footer", "menu", "book-modal"])
+block header 
+  +header().dark.sm
+  +menu()
+block content
+    +breadcrumbs([{link: "#", text: 'Главная'}, {link: '#', text: 'Контакты'}])
+    +contacts({departaments: true}).contacts-page
+block footer 
+  +footer()
+block modals 
+  +book-modal()

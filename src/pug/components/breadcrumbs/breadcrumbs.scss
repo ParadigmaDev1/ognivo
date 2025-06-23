@@ -1,0 +1,28 @@
+@use "src/scss/common/files/mixins" as *;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include s(gap, 10);
+  a {
+    @include s(padding-top, 152);
+    color: var(--txt-light-color);
+    display: flex;
+    align-items: center;
+    @include s(gap, 10);
+    font-weight: 400;
+    @include s(font-size, 12);
+    line-height: 115%;
+
+    img {
+      @include s(width, 12);
+      @include s(height, 10);
+    }
+    &:last-child {
+      img {
+        display: none;
+      }
+    }
+  }
+}

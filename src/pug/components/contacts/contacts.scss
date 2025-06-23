@@ -5,6 +5,10 @@
   @media (max-width: $tab-sm) {
     @include s(margin-bottom, 96);
   }
+  // &.contacts-page {
+  //   @include s(padding-top, 152);
+  //   @include s(padding-bottom, 128);
+  // }
   .contacts-inner {
     @include s(margin-top, 52);
     @media (max-width: $tab-sm) {
@@ -222,6 +226,55 @@
             @media (max-width: $tab-sm) {
               @include s(width, 32);
               @include s(height, 32);
+            }
+          }
+        }
+      }
+    }
+    .contacts-departments {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include s(margin-top, 48);
+      @include s(padding-top, 48);
+      @include s(padding-bottom, 48);
+      border-top: 1px solid var(--lines-gold-color);
+      border-bottom: 1px solid var(--lines-gold-color);
+      .contacts-departament__item {
+        display: flex;
+        align-items: center;
+        @include s(gap, 28);
+        &:nth-child(2n) {
+          @include s(padding-left, 48);
+          border-left: 1px solid var(--lines-gold-color);
+        }
+        .alert-img {
+          @include s(width, 148);
+          @include s(height, 148);
+          .alert-outer {
+            @include s(width, 148);
+            @include s(height, 148);
+          }
+          .alert-inner {
+            @include s(width, 127);
+            @include s(height, 127);
+          }
+        }
+        .contacts-departament__item-text {
+          display: flex;
+          flex-direction: column;
+          @include s(gap, 24);
+          p {
+            @include display-m;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            @include s(gap, 12);
+            @include normal-m;
+            color: var(--accent-color);
+            img {
+              @include s(width, 36);
+              @include s(height, 36);
             }
           }
         }

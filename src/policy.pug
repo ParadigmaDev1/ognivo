@@ -1,0 +1,13 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "alert-img", "policy", "contacts", "map", "footer", "menu", "book-modal"])
+block header 
+  +header().dark.sm
+  +menu()
+block content
+    +policy()
+block footer 
+  +footer()
+block modals 
+  +book-modal()

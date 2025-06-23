@@ -212,7 +212,7 @@
               @include descr-s;
             }
           }
-          button {
+          span {
             @include s(margin-top, 26);
             @include s(height, 56);
             @include s(width, 56);

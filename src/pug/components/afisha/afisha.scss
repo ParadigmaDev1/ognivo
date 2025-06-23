@@ -275,45 +275,21 @@
       }
       .separator {
         @include s(margin-top, 28);
-        position: relative;
-        width: 100%;
-        display: flex;
-        justify-content: center;
 
         &:after {
-          content: "";
           @include s(width, 175);
-          height: 1px;
           background: var(--hover-color);
-          position: absolute;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          margin: auto;
+
           @media (max-width: $tab-sm) {
             @include s(width, 108);
           }
         }
         &:before {
-          content: "";
           @include s(width, 175);
-          height: 1px;
           background: var(--hover-color);
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          margin: auto;
+
           @media (max-width: $tab-sm) {
             @include s(width, 108);
-          }
-        }
-        img {
-          @include s(width, 29);
-          @include s(height, 16);
-          @media (max-width: $tab-sm) {
-            @include s(width, 24);
-            @include s(height, 10);
           }
         }
       }

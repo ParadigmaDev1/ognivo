@@ -97,35 +97,14 @@
     .menu-contacts-wrapper {
       @include s(margin-top, 28);
       .separator {
-        position: relative;
-        width: 100%;
-        display: flex;
-        justify-content: center;
         &:after {
-          content: "";
           @include s(width, 645);
-          height: 1px;
           background: var(--hover-color);
-          position: absolute;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          margin: auto;
         }
         &:before {
           content: "";
           @include s(width, 645);
-          height: 1px;
           background: var(--hover-color);
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-        }
-        img {
-          @include s(width, 29);
-          @include s(height, 16);
         }
       }
       .menu-contacts {

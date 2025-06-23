@@ -142,3 +142,38 @@ svg {
 .ymaps3x0--controls {
   z-index: 50 !important;
 }
+.separator {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &:after {
+    content: "";
+    height: 1px;
+    background: var(--hover-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &:before {
+    content: "";
+    height: 1px;
+    background: var(--hover-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  img {
+    @include s(width, 29);
+    @include s(height, 16);
+    @media (max-width: $tab-sm) {
+      @include s(width, 24);
+      @include s(height, 10);
+    }
+  }
+}

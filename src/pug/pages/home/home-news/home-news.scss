@@ -17,6 +17,9 @@
       @media (max-width: $tab-sm) {
         @include s(gap, 36);
       }
+      button {
+        width: fit-content;
+      }
     }
     .tab-content {
       @include s(margin-top, 48);

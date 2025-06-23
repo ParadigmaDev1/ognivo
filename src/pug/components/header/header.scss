@@ -180,6 +180,9 @@
               @include s(height, 15);
             }
           }
+          svg {
+            display: none;
+          }
           img {
             display: none;
           }
@@ -271,6 +274,68 @@
         transform: translateY(40%);
         opacity: 0;
         pointer-events: none;
+      }
+    }
+  }
+  &.dark {
+    .header-navigation {
+      .burger {
+        border-color: var(--lines-red-color);
+        span {
+          background: var(--dark-color);
+        }
+      }
+      nav {
+        a,
+        button {
+          color: var(--dark-color);
+          svg {
+            path {
+              stroke: var(--dark-color);
+            }
+          }
+        }
+      }
+    }
+    .logo-wrapper {
+      .logo {
+        .change-color {
+          fill: var(--dark-color);
+        }
+      }
+    }
+    .header-contacts-wrapper {
+      .header-contacts {
+        .tel {
+          svg {
+            path {
+              fill: var(--dark-color);
+            }
+          }
+        }
+        a {
+          border-color: var(--lines-red-color);
+          color: var(--dark-color);
+        }
+        svg {
+          path {
+            fill: var(--dark-color);
+          }
+        }
+      }
+    }
+  }
+  &.sm {
+    .logo-wrapper {
+      .logo {
+        @include s(min-width, 126);
+        @include s(min-height, 80);
+        @include s(max-width, 126);
+        @include s(max-height, 80);
+        @include s(padding-right, 21);
+        .change-color {
+          fill: var(--dark-color);
+        }
       }
     }
   }

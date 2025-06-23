@@ -62,11 +62,13 @@
         }
       }
       .image-wrapper {
-        @include s(width, 123);
-        @include s(height, 220);
+        @include s(width, 283);
+        @include s(height, 505);
         display: flex;
         align-items: center;
         @media (max-width: $tab-sm) {
+          @include s(width, 123);
+          @include s(height, 220);
         }
         img {
           width: 120%;
@@ -95,44 +97,25 @@
       }
       .separator {
         @include s(margin-top, 28);
-        position: relative;
-        width: 100%;
-        display: flex;
-        justify-content: center;
+
         @media (max-width: $tab-sm) {
           @include s(margin-top, 16);
         }
         &:after {
-          content: "";
           @include s(width, 303);
-          height: 1px;
           background: var(--hover-color);
-          position: absolute;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          margin: auto;
+
           @media (max-width: $tab-sm) {
             @include s(width, 137);
           }
         }
         &:before {
-          content: "";
           @include s(width, 303);
-          height: 1px;
           background: var(--hover-color);
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          margin: auto;
+
           @media (max-width: $tab-sm) {
             @include s(width, 137);
           }
-        }
-        img {
-          @include s(width, 29);
-          @include s(height, 16);
         }
       }
       .text {

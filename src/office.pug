@@ -1,0 +1,24 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "news-swiper", "info-block", "breadcrumbs", "alert-img", "hero-swiper", "services", "food-menu", "gastronomic", "alert", "news-block", "afisha", "contacts", "offices", "plan", "map", "footer", "menu", "book-modal"])
+block header 
+  +header().dark.sm
+  +menu()
+block content
+  +hero-swiper()
+  +breadcrumbs([{link: "#", text: 'Главная'}, {link: '#', text: 'Мужская баня'}]).top-sm
+  +info-block({title: 'Кабинет 1', subtitle: 'Кабинет для тишины и отдыха', textList: ['Кабинеты это отдельные тёплые пространства с мягким светом и уютной атмосферой — для отдыха между заходами. Здесь можно расслабиться, перекинуться парой слов, восстановить дыхание и собраться с силами. Спокойное место, где ничто не торопит.']})
+  +services()
+  +plan()
+  +offices()
+  +gastronomic()
+  +food-menu()
+  +afisha()
+  +alert()
+  +news-block()
+  +contacts()
+block footer 
+  +footer()
+block modals 
+  +book-modal()

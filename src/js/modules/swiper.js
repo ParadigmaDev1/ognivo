@@ -242,4 +242,55 @@ export const swiper = () => {
     //   },
     // },
   });
+  const heroSwiper = new Swiper(".hero-triple-swiper", {
+    modules: [Navigation],
+    slidesPerView: 2.15,
+    spaceBetween: 10,
+    centeredSlides: true,
+    // allowTouchMove: false,
+    navigation: {
+      prevEl: ".hero-swiper-prev",
+      nextEl: ".hero-swiper-next",
+    },
+    on: {
+      init(swiper) {
+        swiper.slideTo(1);
+      },
+    },
+    // breakpoints: {
+    //   0: {
+    //     slidesPerView: 1.1,
+    //     spaceBetween: 10,
+    //     centeredSlides: true,
+    //   },
+    //   767: {
+    //     slidesPerView: 3,
+    //     spaceBetween: 25,
+    //     centeredSlides: false,
+    //   },
+    // },
+  });
+  const foodMenuSwiper = new Swiper(".food-menu-swiper", {
+    modules: [Navigation],
+    slidesPerView: 4,
+    spaceBetween: 24,
+    // allowTouchMove: false,
+    navigation: {
+      prevEl: ".food-menu-prev",
+      nextEl: ".food-menu-next",
+    },
+
+    // breakpoints: {
+    //   0: {
+    //     slidesPerView: 1.1,
+    //     spaceBetween: 10,
+    //     centeredSlides: true,
+    //   },
+    //   767: {
+    //     slidesPerView: 3,
+    //     spaceBetween: 25,
+    //     centeredSlides: false,
+    //   },
+    // },
+  });
 };

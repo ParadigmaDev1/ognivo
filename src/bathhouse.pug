@@ -1,0 +1,24 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "news-swiper", "info-block", "breadcrumbs", "alert-img", "hero-swiper", "services", "food-menu", "gastronomic", "alert", "news-block", "afisha", "contacts", "offices", "plan", "map", "footer", "menu", "book-modal"])
+block header 
+  +header().dark.sm
+  +menu()
+block content
+  +hero-swiper()
+  +breadcrumbs([{link: "#", text: 'Главная'}, {link: '#', text: 'Мужская баня'}]).top-sm
+  +info-block({title: 'Мужская баня', subtitle: 'Традиционные общественные бани со сказочным размахом', textList: ['Часы тикают, отсчитывая моменты, которые складываются в дни, месяцы, годы. Время беспрерывно течет, как река, несущая нас через неизведанные пейзажи бытия. Солнце мягко пробивается сквозь их, создавая игру света и тени на земле. Где-то вдалеке слышен щебет птиц, наполняющий воздух ощущением жизни.', 'Часы тикают, отсчитывая моменты, которые складываются в дни, месяцы, годы. Время беспрерывно течет, как река, несущая нас через неизведанные пейзажи бытия.']})
+  +offices()
+  +plan()
+  +services()
+  +gastronomic()
+  +food-menu()
+  +afisha()
+  +alert()
+  +news-block()
+  +contacts()
+block footer 
+  +footer()
+block modals 
+  +book-modal()

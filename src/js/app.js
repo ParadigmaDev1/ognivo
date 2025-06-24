@@ -10,6 +10,7 @@ import IMask from "imask";
 import { header } from "../pug/components/header/header.js";
 import { map } from "../pug/components/map/map.js";
 import { menu } from "../pug/components/menu/menu.js";
+import { infoBlock } from "../pug/components/info-block/info-block.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   accordionFunc();
@@ -22,5 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   validateForm();
   hideText();
   header();
+  infoBlock();
   menu();
 });

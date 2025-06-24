@@ -1,0 +1,72 @@
+@use "src/scss/common/files/mixins" as *;
+
+.plan {
+  @include s(margin-top, 124);
+  .plan-inner {
+    h3 {
+      @include h2;
+      color: var(--accent-color);
+      text-align: center;
+    }
+    .plan-content {
+      @include s(margin-top, 48);
+
+      .tabs {
+        display: flex;
+        align-items: center;
+        @include s(gap, 6);
+        .tab {
+          border: 1px solid var(--lines-gold-color);
+          border-radius: 999px;
+          @include padding(9, 24);
+          transition: var(--trs-cubic-300);
+          text-transform: uppercase;
+          @include descr-m;
+          &.active {
+            border-color: var(--accent-color);
+            background: var(--accent-color);
+            color: var(--white-color);
+          }
+        }
+      }
+      .tab-content {
+        display: grid;
+        @include gtc(408, 1fr);
+        @include s(gap, 47);
+        .plan-features {
+          display: flex;
+          flex-direction: column;
+          @include s(margin-top, 28);
+
+          .plan-features__item {
+            border-top: 1px solid var(--lines-gold-color);
+            @include padding(8, 0);
+            display: flex;
+            align-items: center;
+            @include s(gap, 16);
+            &:last-child {
+              border-bottom: 1px solid var(--lines-gold-color);
+            }
+            img {
+              @include s(width, 40);
+              @include s(height, 40);
+              object-fit: contain;
+            }
+            p {
+              text-transform: uppercase;
+              @include descr-m;
+            }
+          }
+        }
+        .plan-img {
+          mix-blend-mode: multiply;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,9 @@
   justify-content: center;
   @include s(gap, 10);
   @include s(padding-top, 116);
-
+  &.top-sm {
+    @include s(padding-top, 16);
+  }
   a {
     color: var(--txt-light-color);
     display: flex;

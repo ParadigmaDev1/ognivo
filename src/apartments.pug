@@ -1,0 +1,22 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "news-swiper", "info-block", "breadcrumbs", "alert-img", "hero-swiper", "services", "food-menu", "gastronomic", "alert", "news-block", "afisha","contacts", "offices",  "map", "footer", "menu", "book-modal"])
+block header 
+  +header().dark.sm
+  +menu()
+block content
+  +hero-swiper()
+  +breadcrumbs([{link: "#", text: 'Главная'}, {link: '#', text: 'Мужская баня'}]).top-sm
+  +info-block({title: 'VIP-апартаменты', subtitle: 'Пространство для своего круга', textList: ['VIP-апартаменты в «Огниво» — это отдельная банная зона для тех, кто ценит тишину, тепло и возможность побыть вместе. Здесь не важны формальные границы — только ваше пространство, ваша компания и свой ритм. Парение, отдых, уходовые процедуры и ощущение уединённости — всё, что нужно, чтобы провести время вдали от суеты, рядом с теми, с кем по-настоящему хочется быть.'], rooms: true})
+  +services()
+  +gastronomic()
+  +food-menu()
+  +afisha()
+  +alert()
+  +news-block()
+  +contacts()
+block footer 
+  +footer()
+block modals 
+  +book-modal()

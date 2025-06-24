@@ -1,7 +1,7 @@
 extends ./pug/templates/template.pug
 
 block head 
-  +head(["header", "news-swiper", "hero", "home-about", "home-format", "alert-img", "afisha", "home-features", "home-news", "home-alert", "contacts", "map", "footer", "menu", "book-modal"])
+  +head(["header", "news-swiper", "hero", "home-about", "home-format", "alert-img", "afisha", "home-features", "news-block", "alert", "contacts", "map", "footer", "menu", "book-modal"])
 block header 
   +header()
   +menu()
@@ -11,8 +11,8 @@ block content
   +home-format()
   +afisha()
   +home-features()
-  +home-news()
-  +home-alert()
+  +news-block()
+  +alert()
   +contacts()
 block footer 
   +footer()

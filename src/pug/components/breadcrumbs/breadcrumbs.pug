@@ -1,5 +1,5 @@
 mixin breadcrumbs(links)
-    .breadcrumbs.container 
+    .breadcrumbs.container&attributes(attributes) 
         each link,index in links
             a(href=link.link) 
                 | #{link.text}

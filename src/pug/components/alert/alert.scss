@@ -1,6 +1,6 @@
 @use "src/scss/common/files/mixins" as *;
 
-.home-alert {
+.alert {
   @include s(height, 1059);
   @media (max-width: $tab-sm) {
     @include s(height, 688);
@@ -49,7 +49,7 @@
       }
     }
   }
-  .home-alert-wrapper {
+  .alert-wrapper {
     @include s(height, 600);
     mask: url("../img/mask-hero.svg") bottom/cover no-repeat;
     position: relative;
@@ -63,7 +63,7 @@
 
       mask: url("../img/mask-hero-mob.png") bottom/cover no-repeat;
     }
-    .home-alert-wrapper-inner {
+    .alert-wrapper-inner {
       display: flex;
       flex-direction: column;
       align-items: center;

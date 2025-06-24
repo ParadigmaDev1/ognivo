@@ -1,6 +1,6 @@
 @use "src/scss/common/files/mixins" as *;
 
-.home-news {
+.news-block {
   @include s(margin-top, 96);
   @include s(margin-bottom, 96);
   overflow: hidden;
@@ -8,7 +8,7 @@
     @include s(margin-top, 64);
     @include s(margin-bottom, 64);
   }
-  .home-news-inner {
+  .news-block-inner {
     .tabs {
       display: flex;
       align-items: baseline;

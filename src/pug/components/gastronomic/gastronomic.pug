@@ -1,0 +1,23 @@
+mixin gastronomic()
+    .gastronomic
+        .gastronomic-inner.container-sm
+            .image-container 
+                img(src="./img/icons/union-red-top.svg", alt="union")
+                .image-wrapper 
+                    img(src="./img/gastronomic/1.jpg", alt="gastronomic" data-parallax="right")
+                img(src="./img/icons/union-red-bottom.svg", alt="union")
+            .content 
+                +alert-img({img: "./img/gastronomic/person.jpg"})
+                
+                h3.title Здесь разгораются нешуточные страсти!
+                .separator 
+                    img(src="./img/icons/union-red.svg", alt="union")
+                p.descr Меню от бренд-шефа Сергея Отдельнова, который в качестве вдохновения использовал исконно русские мотивы и специфику банной индустрии
+                a(href="#").btn.primary.m
+                    | смотреть меню
+                    img(src="./img/icons/arrow-right-outline.svg", alt="arrow") 
+            .image-container 
+                img(src="./img/icons/union-red-top.svg", alt="union")
+                .image-wrapper 
+                    img(src="./img/gastronomic/2.jpg", alt="gastronomic"  data-parallax="right")
+                img(src="./img/icons/union-red-bottom.svg", alt="union")

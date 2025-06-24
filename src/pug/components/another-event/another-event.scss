@@ -1,0 +1,12 @@
+@use "src/scss/common/files/mixins" as *;
+
+.another-event {
+  @include s(margin-bottom, 96);
+
+  h3 {
+    text-align: center;
+    color: var(--accent-color);
+    @include h2;
+    @include s(margin-bottom, 36);
+  }
+}

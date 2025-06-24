@@ -125,6 +125,7 @@ svg {
   }
   button {
     pointer-events: all !important;
+    padding: 0;
     &:hover {
       svg {
         .arrow-avg-bg {

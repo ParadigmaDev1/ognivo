@@ -1,0 +1,23 @@
+@use "src/scss/common/files/mixins" as *;
+
+.gallery {
+  .gallery-inner {
+    h3 {
+      text-align: center;
+      color: var(--accent-color);
+      @include h2;
+    }
+    .gallery-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include s(gap, 24);
+      @include s(margin-top, 36);
+      img {
+        @include s(height, 432);
+      }
+    }
+    & > .btn {
+      margin: calc(28 / var(--screensize) * 100vw) auto;
+    }
+  }
+}

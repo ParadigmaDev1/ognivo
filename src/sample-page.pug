@@ -1,0 +1,15 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "text-page", "another-event", "gallery", "similar", "news-swiper", "breadcrumbs", "events-swiper", "alert-img", "sample-page", "footer", "menu", "book-modal"])
+block header 
+  +header().dark.sm
+  +menu()
+block content
+    +breadcrumbs([{link: "#", text: 'Главная'}, {link: '#', text: 'Новости'}, {link: '#', text: 'В гостях у сказки'}])
+    .text-page-wrapper
+      +sample-page()
+block footer 
+  +footer()
+block modals 
+  +book-modal()

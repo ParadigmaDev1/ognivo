@@ -1,0 +1,81 @@
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: var(--trs-cubic-600);
+  border-bottom: 1px solid var(--lines-gold-color);
+
+  &.active {
+    .accordion-title {
+      .title {
+        color: var(--accent-color);
+      }
+      .icon {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    @include s(gap, 12);
+    pointer-events: none;
+  }
+  .accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include s(gap, 20);
+    transition: var(--trs-cubic-300);
+    @include padding(24, 0);
+    background: none;
+    border: none;
+    cursor: pointer;
+    @media (max-width: $tab-sm) {
+      @include padding(16, 0);
+    }
+    .title {
+      @include display-s;
+      pointer-events: none;
+      transition: var(--trs-cubic-300);
+      text-align: left;
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 20);
+      }
+    }
+    .icon {
+      transition: var(--trs-cubic-300);
+      pointer-events: none;
+      @include s(width, 32);
+      @include s(height, 32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--lines-red-color);
+      border-radius: 999px;
+      svg {
+        @include s(width, 14);
+        @include s(height, 14);
+      }
+    }
+  }
+  .collapse {
+    transition: var(--trs-cubic-300);
+
+    @include s(padding-bottom, 24);
+    @media (max-width: $tab-sm) {
+      padding-left: 0;
+      @include s(padding-bottom, 26);
+    }
+    p {
+      font-weight: 500;
+      @include s(font-size, 18);
+      line-height: 148%;
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 16);
+      }
+    }
+  }
+}

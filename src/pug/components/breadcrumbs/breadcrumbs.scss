@@ -5,8 +5,9 @@
   align-items: center;
   justify-content: center;
   @include s(gap, 10);
+  @include s(padding-top, 116);
+
   a {
-    @include s(padding-top, 152);
     color: var(--txt-light-color);
     display: flex;
     align-items: center;
@@ -20,6 +21,7 @@
       @include s(height, 10);
     }
     &:last-child {
+      pointer-events: none;
       img {
         display: none;
       }

@@ -1,0 +1,269 @@
+@use "src/scss/common/files/mixins" as *;
+.text-page-wrapper {
+  overflow: hidden;
+  .another-event {
+    @include s(margin-bottom, 128);
+  }
+  .gallery {
+    @include s(margin-bottom, 96);
+    @include s(margin-top, 96);
+  }
+}
+.text-page {
+  @include s(max-width, 1000);
+
+  h1 {
+    text-align: center;
+    color: var(--accent-color);
+    @include h1;
+    @include s(margin-top, 28);
+  }
+  .image-container {
+    @include s(margin-top, 36);
+    position: relative;
+    & > img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      @include s(bottom, -32);
+      @include s(height, 64);
+    }
+    .image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include s(gap, 114);
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 2;
+        background-image: url("../img/afisha/substr.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include s(height, 32);
+        @include s(width, 64);
+        @media (max-width: $tab-sm) {
+          @include s(height, 22);
+          @include s(width, 44);
+        }
+      }
+      .union {
+        @include s(width, 24);
+        @include s(height, 10);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        &:first-child {
+          @include s(left, -114);
+        }
+        &:last-child {
+          @include s(right, -114);
+        }
+      }
+      img {
+        width: 100%;
+        @include s(height, 499);
+        object-fit: cover;
+      }
+    }
+    .date-wrapper {
+      display: grid;
+      @include gtc(90, 1fr, 90);
+      @include s(gap, 70);
+      align-items: flex-end;
+      @include s(margin-top, -40);
+      z-index: 2;
+      position: relative;
+      @media (max-width: $tab-sm) {
+        @include gtc(83, 1fr, 83);
+
+        @include s(gap, 12);
+      }
+      .date {
+        @include s(width, 80);
+        @include s(height, 80);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include descr-xl;
+        color: var(--accent-color);
+        background-image: url("../img/afisha/date-bg.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        @media (max-width: $tab-sm) {
+          @include s(width, 56);
+          @include s(height, 56);
+          @include descr-l;
+        }
+      }
+      .year {
+        text-align: right;
+      }
+      .year,
+      .mounth {
+        color: var(--accent-color);
+        text-transform: uppercase;
+        @include descr-s;
+        @include s(padding-bottom, 12);
+      }
+    }
+  }
+  .separator {
+    @include s(margin-top, 60);
+    &:last-child {
+      @include s(margin-top, 36);
+    }
+    &:after {
+      @include s(width, 357);
+      background: var(--hover-color);
+
+      @media (max-width: $tab-sm) {
+        @include s(width, 108);
+      }
+    }
+    &:before {
+      @include s(width, 357);
+      background: var(--hover-color);
+
+      @media (max-width: $tab-sm) {
+        @include s(width, 108);
+      }
+    }
+  }
+  h2 {
+    @include h2;
+    @include s(margin-top, 48);
+  }
+  p {
+    @include normal-m;
+    @include s(margin-top, 24);
+  }
+  & > .image-wrapper {
+    width: 100%;
+    @include s(height, 499);
+    @include s(margin-top, 36);
+    @include s(margin-bottom, 36);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  h3 {
+    @include s(margin-top, 48);
+    @include h3;
+  }
+  ul {
+    list-style: none;
+    @include s(margin-top, 24);
+    display: flex;
+    flex-direction: column;
+    @include s(gap, 8);
+
+    li {
+      @include s(padding-left, 36);
+      @include normal-m;
+      position: relative;
+      a {
+        color: var(--accent-color);
+      }
+      &:before {
+        content: "";
+        @include s(width, 8);
+        @include s(height, 8);
+        background: var(--accent-color);
+        border-radius: 999px;
+        position: absolute;
+        left: 0;
+        @include s(top, 7);
+      }
+    }
+  }
+  h4 {
+    @include h4;
+    @include s(margin-top, 48);
+  }
+  h5 {
+    @include h5;
+    @include s(margin-top, 48);
+  }
+  ol {
+    @include s(margin-top, 16);
+    display: flex;
+    flex-direction: column;
+    @include s(gap, 6);
+    list-style: none;
+    li {
+      @include normal-m;
+      counter-increment: section;
+      &:before {
+        content: "1." counter(section) " ";
+        font-weight: 700;
+        @include normal-m;
+        color: var(--accent-color);
+      }
+      span {
+        color: var(--accent-color);
+      }
+      ol {
+        @include s(padding-left, 36);
+
+        li {
+          counter-increment: section-inner;
+          @include normal-s;
+          &:before {
+            content: "0" counter(section) "." counter(section-inner) " ";
+            font-weight: 700;
+            @include normal-m;
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+  .accordion {
+    @include s(margin-top, 24);
+
+    .accordion-item {
+      &:first-child {
+        border-top: 1px solid var(--lines-gold-color);
+      }
+    }
+    .accordion-body {
+      p {
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .book-btn {
+    margin: calc(48 / var(--screensize) * 100vw) auto;
+  }
+  .text-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include s(gap, 36);
+    @include s(margin-top, 24);
+    @include s(margin-bottom, 24);
+    align-items: center;
+    .image-wrapper {
+      width: 100%;
+      @include s(height, 242);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

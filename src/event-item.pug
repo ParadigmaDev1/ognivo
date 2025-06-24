@@ -1,0 +1,17 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "text-page", "another-event", "gallery", "similar", "news-swiper", "breadcrumbs", "events-swiper", "alert-img", "event-item", "footer", "menu", "book-modal"])
+block header 
+  +header().dark.sm
+  +menu()
+block content
+    +breadcrumbs([{link: "#", text: 'Главная'}, {link: '#', text: 'Афиша'}, {link: '#', text: 'День здоровья с Доктором Зубаревой'}])
+    .text-page-wrapper
+      +event-item()
+      +gallery()
+      +another-event()
+block footer 
+  +footer()
+block modals 
+  +book-modal()

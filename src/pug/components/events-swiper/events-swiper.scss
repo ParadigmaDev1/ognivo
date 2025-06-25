@@ -14,7 +14,7 @@
     .image-wrapper {
       @include s(height, 611);
       @media (max-width: $tab-sm) {
-        @include s(height, 258);
+        @include s(height, 396);
       }
       img {
         width: 100%;

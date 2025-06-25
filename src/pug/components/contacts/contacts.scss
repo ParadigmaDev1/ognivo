@@ -239,32 +239,66 @@
       @include s(padding-bottom, 48);
       border-top: 1px solid var(--lines-gold-color);
       border-bottom: 1px solid var(--lines-gold-color);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include s(margin-top, 64);
+        @include s(padding-top, 24);
+        @include s(padding-bottom, 24);
+      }
       .contacts-departament__item {
         display: flex;
         align-items: center;
         @include s(gap, 28);
+        @media (max-width: $tab-sm) {
+          @include s(gap, 16);
+        }
         &:nth-child(2n) {
           @include s(padding-left, 48);
           border-left: 1px solid var(--lines-gold-color);
+          @media (max-width: $tab-sm) {
+            padding-left: 0;
+            border-left: none;
+            @include s(margin-top, 24);
+            @include s(padding-top, 24);
+            border-top: 1px solid var(--lines-gold-color);
+          }
         }
         .alert-img {
           @include s(width, 148);
           @include s(height, 148);
+          @media (max-width: $tab-sm) {
+            @include s(width, 80);
+            @include s(height, 80);
+          }
           .alert-outer {
             @include s(width, 148);
             @include s(height, 148);
+            @media (max-width: $tab-sm) {
+              @include s(width, 80);
+              @include s(height, 80);
+            }
           }
           .alert-inner {
             @include s(width, 127);
             @include s(height, 127);
+            @media (max-width: $tab-sm) {
+              @include s(width, 68);
+              @include s(height, 68);
+            }
           }
         }
         .contacts-departament__item-text {
           display: flex;
           flex-direction: column;
           @include s(gap, 24);
+          @media (max-width: $tab-sm) {
+            @include s(gap, 12);
+          }
           p {
             @include display-m;
+            @media (max-width: $tab-sm) {
+              @include display-s;
+            }
           }
           a {
             display: flex;

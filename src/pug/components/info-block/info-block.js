@@ -13,7 +13,6 @@ export const infoBlock = () => {
 
       // Закрывать подсказку при клике вне области
       button.addEventListener("mouseleave", (e) => {
-        console.log("xyu");
         button.setAttribute("aria-expanded", "false");
         tooltip.setAttribute("aria-hidden", "true");
       });

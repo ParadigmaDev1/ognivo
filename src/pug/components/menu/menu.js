@@ -4,7 +4,6 @@ export const menu = () => {
   const menuWrapper = document.querySelector(".menu-wrapper");
   const header = document.querySelector(".header");
   const burger = header.querySelector(".burger");
-  console.log(burger);
   burger.addEventListener("click", () => {
     if (menuWrapper.className.includes("active")) {
       menuWrapper.classList.remove("active");

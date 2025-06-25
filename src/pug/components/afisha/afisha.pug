@@ -3,41 +3,41 @@ mixin afisha()
         .afisha-inner.container     
             .afisha-top 
                 .union-wrapper 
-                    img(src="./img/afisha/svg-text.svg", alt="text")
-                    img(src="./img/icons/union-red.svg", alt="union")
+                    img(loading="lazy" src="./img/afisha/svg-text.svg", alt="text" width='123' height='19')
+                    img(loading="lazy" src="./img/icons/union-red.svg", alt="union" width='29' height='16')
                 h3.title Афиша мероприятий
                 p.descr только в рамках мужского разряда
             .afisha-swiper-wrapper 
                 .afisha-swiper 
                     .swiper-wrapper 
                         .swiper-slide 
-                            img(src="./img/afisha/1.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/1.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/2.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/2.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/3.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/3.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/4.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/4.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/5.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/5.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/1.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/1.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/2.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/2.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/3.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/3.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/4.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/4.jpg", alt="afisha" width='396' height='561')
                         .swiper-slide 
-                            img(src="./img/afisha/5.jpg", alt="afisha")
+                            img(loading="lazy" src="./img/afisha/5.jpg", alt="afisha" width='396' height='561')
                 .navigation.container 
-                    button.btn.nav.afisha-prev 
+                    button.btn.nav.afisha-prev(aria-label='Стрелка назад') 
                         <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path class='arrow-avg-bg' d="M44.8542 45.1056C47.787 42.3126 49.993 38.604 51.1135 34.3785C52.4685 29.2689 56 28.0041 56 28.0041C56 28.0041 51.9826 26.1828 51.1135 21.6296C49.9471 17.2309 47.6043 13.3923 44.4897 10.5636C41.7744 7.92277 38.2884 5.93477 34.3539 4.88995C29.2478 3.53402 27.984 0 27.984 0C27.984 0 26.164 4.02026 21.614 4.88995C17.4515 5.99532 13.791 8.15635 11.014 11.0292C8.14687 13.8073 5.99012 17.4677 4.88647 21.6296C4.01741 26.1828 0 28.0041 0 28.0041C0 28.0041 3.53151 29.2689 4.88647 34.3785C6.06816 38.8348 8.45718 42.7161 11.6328 45.555C14.33 48.1367 17.7703 50.0809 21.6457 51.1101C26.1957 51.9797 28.0157 56 28.0157 56C28.0157 56 29.2796 52.466 34.3856 51.1101C38.4828 50.022 42.0936 47.9113 44.8542 45.1056Z" fill="#B50000"/>
                             <path d="M26.3956 20.8891C25.856 24.5713 23.0263 27.4522 19.4373 27.9731L19.2504 28.0002L19.4373 28.0273C23.0263 28.5483 25.856 31.4291 26.3956 35.1113M19.697 28.0002L33.4727 28.0002" stroke="white"/>
                             <circle cx="2" cy="2" r="1.5" transform="matrix(-1 0 0 1 36.75 25.9999)" stroke="white"/>
                         </svg>
-                    button.btn.nav.afisha-next 
+                    button.btn.nav.afisha-next(aria-label='Стрелка вперед') 
                         <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path class='arrow-avg-bg' d="M11.1458 45.1056C8.21298 42.3126 6.00697 38.604 4.88647 34.3785C3.53151 29.2689 0 28.0041 0 28.0041C0 28.0041 4.01741 26.1828 4.88647 21.6296C6.05292 17.2309 8.39575 13.3923 11.5103 10.5636C14.2256 7.92277 17.7116 5.93477 21.6461 4.88995C26.7522 3.53402 28.016 0 28.016 0C28.016 0 29.836 4.02026 34.386 4.88995C38.5485 5.99532 42.209 8.15635 44.986 11.0292C47.8531 13.8073 50.0099 17.4677 51.1135 21.6296C51.9826 26.1828 56 28.0041 56 28.0041C56 28.0041 52.4685 29.2689 51.1135 34.3785C49.9318 38.8348 47.5428 42.7161 44.3672 45.555C41.67 48.1367 38.2297 50.0809 34.3543 51.1101C29.8043 51.9797 27.9843 56 27.9843 56C27.9843 56 26.7204 52.466 21.6144 51.1101C17.5172 50.022 13.9064 47.9113 11.1458 45.1056Z" fill="#B50000"/>
                             <path d="M29.6044 20.8891C30.144 24.5713 32.9737 27.4522 36.5627 27.9731L36.7496 28.0002L36.5627 28.0273C32.9737 28.5483 30.144 31.4291 29.6044 35.1113M36.303 28.0002L22.5273 28.0002" stroke="white"/>
@@ -45,7 +45,7 @@ mixin afisha()
                         </svg> 
                 .afisha-date-swiper
                     .bg 
-                        img(src="./img/afisha/date-bg.svg", alt="bg")
+                        img(loading="lazy" src="./img/afisha/date-bg.svg", alt="bg" width='80' height='80')
                     
                     .swiper-wrapper 
                         .swiper-slide 
@@ -109,7 +109,7 @@ mixin afisha()
                                 p.time  в 13:00
                             p.descr День здоровья с Доктором Зубаревой 
                     .separator 
-                        img(src="./img/icons/union-bottom.svg", alt="union")
+                        img(loading="lazy" src="./img/icons/union-bottom.svg", alt="union" width='29' height='16')
             a(href="#").btn.primary.m.afisha-btn
                 | смотреть все
-                img(src="./img/icons/arrow-right-outline.svg", alt="arrow")
+                img(loading="lazy" src="./img/icons/arrow-right-outline.svg", alt="arrow" width='17' height='14')

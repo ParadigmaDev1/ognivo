@@ -2,4 +2,7 @@
 
 .stock {
   @include s(margin-bottom, 96);
+  @media (max-width: $tab-sm) {
+    @include s(margin-bottom, 80);
+  }
 }

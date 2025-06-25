@@ -3,15 +3,25 @@
   overflow: hidden;
   .another-event {
     @include s(margin-bottom, 128);
+    @media (max-width: $tab-sm) {
+      @include s(margin-bottom, 80);
+    }
   }
   .gallery {
     @include s(margin-bottom, 96);
     @include s(margin-top, 96);
+    @media (max-width: $tab-sm) {
+      @include s(margin-bottom, 80);
+      @include s(margin-top, 80);
+    }
   }
 }
 .text-page {
   @include s(max-width, 1000);
-
+  @media (max-width: $tab-sm) {
+    max-width: 100%;
+    @include s(margin-top, 82);
+  }
   h1 {
     text-align: center;
     color: var(--accent-color);
@@ -21,6 +31,9 @@
   .image-container {
     @include s(margin-top, 36);
     position: relative;
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 24);
+    }
     & > img {
       position: absolute;
       left: 0;
@@ -28,6 +41,12 @@
       margin: auto;
       @include s(bottom, -32);
       @include s(height, 64);
+      @include s(width, 64);
+      @media (max-width: $tab-sm) {
+        @include s(height, 56);
+        @include s(width, 56);
+        @include s(bottom, -28);
+      }
     }
     .image-wrapper {
       display: flex;
@@ -60,6 +79,9 @@
         top: 0;
         bottom: 0;
         margin: auto;
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
         &:first-child {
           @include s(left, -114);
         }
@@ -71,6 +93,9 @@
         width: 100%;
         @include s(height, 499);
         object-fit: cover;
+        @media (max-width: $tab-sm) {
+          @include s(height, 180);
+        }
       }
     }
     .date-wrapper {
@@ -83,6 +108,7 @@
       position: relative;
       @media (max-width: $tab-sm) {
         @include gtc(83, 1fr, 83);
+        @include s(margin-top, -26);
 
         @include s(gap, 12);
       }
@@ -118,6 +144,9 @@
   }
   .separator {
     @include s(margin-top, 60);
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 52);
+    }
     &:last-child {
       @include s(margin-top, 36);
     }
@@ -126,7 +155,7 @@
       background: var(--hover-color);
 
       @media (max-width: $tab-sm) {
-        @include s(width, 108);
+        @include s(width, 133);
       }
     }
     &:before {
@@ -134,24 +163,35 @@
       background: var(--hover-color);
 
       @media (max-width: $tab-sm) {
-        @include s(width, 108);
+        @include s(width, 133);
       }
     }
   }
   h2 {
     @include h2;
     @include s(margin-top, 48);
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 24);
+    }
   }
   p {
     @include normal-m;
     @include s(margin-top, 24);
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 16);
+    }
   }
   & > .image-wrapper {
     width: 100%;
     @include s(height, 499);
     @include s(margin-top, 36);
     @include s(margin-bottom, 36);
-
+    overflow: hidden;
+    @media (max-width: $tab-sm) {
+      @include s(height, 180);
+      @include s(margin-top, 28);
+      @include s(margin-bottom, 28);
+    }
     img {
       width: 100%;
       height: 100%;
@@ -161,6 +201,9 @@
   h3 {
     @include s(margin-top, 48);
     @include h3;
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 36);
+    }
   }
   ul {
     list-style: none;
@@ -168,7 +211,9 @@
     display: flex;
     flex-direction: column;
     @include s(gap, 8);
-
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 16);
+    }
     li {
       @include s(padding-left, 36);
       @include normal-m;
@@ -191,10 +236,23 @@
   h4 {
     @include h4;
     @include s(margin-top, 48);
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 36);
+    }
   }
   h5 {
     @include h5;
     @include s(margin-top, 48);
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 36);
+    }
+  }
+  h6 {
+    @include h6;
+    @include s(margin-top, 48);
+    @media (max-width: $tab-sm) {
+      @include s(margin-top, 36);
+    }
   }
   ol {
     @include s(margin-top, 16);
@@ -216,14 +274,17 @@
       }
       ol {
         @include s(padding-left, 36);
-
+        @media (max-width: $tab-sm) {
+          padding-left: 0;
+        }
         li {
           counter-increment: section-inner;
           @include normal-s;
+
           &:before {
             content: "0" counter(section) "." counter(section-inner) " ";
             font-weight: 700;
-            @include normal-m;
+            @include normal-s;
             color: var(--accent-color);
           }
         }
@@ -248,6 +309,9 @@
   }
   .book-btn {
     margin: calc(48 / var(--screensize) * 100vw) auto;
+    @media (max-width: $tab-sm) {
+      margin: calc(36 / var(--screensize) * 100vw) auto;
+    }
   }
   .text-block {
     display: grid;
@@ -256,9 +320,16 @@
     @include s(margin-top, 24);
     @include s(margin-bottom, 24);
     align-items: center;
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 1fr;
+      @include s(gap, 28);
+    }
     .image-wrapper {
       width: 100%;
       @include s(height, 242);
+      @media (max-width: $tab-sm) {
+        @include s(height, 180);
+      }
       img {
         width: 100%;
         height: 100%;

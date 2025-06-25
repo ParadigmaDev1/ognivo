@@ -52,6 +52,7 @@ export const map = () => {
       markerElement.className = "marker";
       markerImg.className = "marker-img";
       markerImg.src = "./img/icons/map-pin.svg";
+      markerImg.ariaLabel = "Маркер";
       markerElement.appendChild(markerImg);
 
       const marker = new YMapMarker(

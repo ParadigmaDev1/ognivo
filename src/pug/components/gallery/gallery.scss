@@ -12,8 +12,18 @@
       grid-template-columns: repeat(3, 1fr);
       @include s(gap, 24);
       @include s(margin-top, 36);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: repeat(2, 1fr);
+        @include s(gap, 10);
+        @include s(margin-top, 20);
+      }
       img {
         @include s(height, 432);
+        width: 100%;
+        object-fit: cover;
+        @media (max-width: $tab-sm) {
+          @include s(height, 155);
+        }
       }
     }
     & > .btn {

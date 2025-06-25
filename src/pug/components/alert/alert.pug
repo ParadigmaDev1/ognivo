@@ -1,11 +1,11 @@
 mixin alert()
     .alert
         .image-wrapper 
-            img(src="./img/home/alert/bg.jpg", alt="alert")            
-            img(src="./img/home/alert/fire.png", alt="fire")            
+            img(loading="lazy" src="./img/home/alert/bg.jpg", alt="alert" width='1420' height='600')            
+            img(loading="lazy" src="./img/home/alert/fire.png", alt="fire" width='1420' height='600')            
         .alert-wrapper
             .alert-wrapper-inner.container
-                img(src="./img/icons/union-top.svg", alt="union")
+                img(loading="lazy" src="./img/icons/union-top.svg", alt="union"  width='29' height='16')
                 .content 
                     +alert-img({img: "./img/home/about/alert.jpg"})
                     p.title В «Огниво» мы с вниманием относимся к возрождению истинных банных традиций, ставя во главу угла уникальный опыт наших гостей

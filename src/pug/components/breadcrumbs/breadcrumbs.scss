@@ -6,6 +6,9 @@
   justify-content: center;
   @include s(gap, 10);
   @include s(padding-top, 116);
+  @media (max-width: $tab-sm) {
+    display: none;
+  }
   &.top-sm {
     @include s(padding-top, 16);
   }

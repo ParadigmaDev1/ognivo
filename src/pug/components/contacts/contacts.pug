@@ -6,25 +6,25 @@ mixin contacts(data = {})
                 +map()
                 .content 
                     .pin-wrapper 
-                        img(src="./img/contacts/text.svg", alt="text")
-                        img(src="./img/contacts/pin.svg", alt="text")
+                        img(loading="lazy" src="./img/contacts/text.svg", alt="text" width='181' height='36')
+                        img(loading="lazy" src="./img/contacts/pin.svg", alt="text" width='40' height='40')
                     p.address Москва, пл. Киевского Вокзала, 1А
                     .separator 
-                        img(src="./img/icons/union-red.svg", alt="union")
+                        img(loading="lazy" src="./img/icons/union-red.svg", alt="union" width='29' height='16')
                     .places 
                         p.title Мы находимся в центре города, <br>рядом с удобными транспортными развязками.
                         .places-list 
                             .place-item 
-                                img(src="./img/contacts/human.svg", alt="")
+                                img(loading="lazy" src="./img/contacts/human.svg", alt="place" width='36' height='36')
                                 p м. Динамо <br>12 мин
                             .place-item 
-                                img(src="./img/contacts/human.svg", alt="")
+                                img(loading="lazy" src="./img/contacts/human.svg", alt="place" width='36' height='36')
                                 p м. Савеловская <br>10 мин
                             .place-item 
-                                img(src="./img/contacts/car.svg", alt="")
+                                img(loading="lazy" src="./img/contacts/car.svg", alt="place" width='36' height='36')
                                 p мы Рядом <br>с ТТК
                             .place-item 
-                                img(src="./img/contacts/car.svg", alt="")
+                                img(loading="lazy" src="./img/contacts/car.svg", alt="place" width='36' height='36')
                                 p Своя парковка <br> для гостей
                     .btn-wrapper
                         a(href="#" target='_blank').btn.outline.m
@@ -38,7 +38,7 @@ mixin contacts(data = {})
                         .date-item 
                             p Ежедневно
                             p с 10:00 до 02:00
-                        img(src="./img/icons/phone.svg", alt="phone") 
+                        img(loading="lazy" src="./img/icons/phone.svg", alt="phone" width='40' height='40') 
                         .date-item 
                             p Call center
                             p с 10:00 до 02:00
@@ -49,12 +49,12 @@ mixin contacts(data = {})
                         .contacts-departament__item-text 
                             p Название отдела
                             a(href="mailto:sales_ognivo@yandex.ru") 
-                                img(src="./img/icons/mail.svg", alt="mail")
+                                img(loading="lazy" src="./img/icons/mail.svg", alt="mail" width='36' height='36')
                                 | sales_ognivo@yandex.ru
                     .contacts-departament__item 
                         +alert-img({img: "./img/home/about/alert.jpg"})
                         .contacts-departament__item-text 
                             p Название отдела
                             a(href="mailto:sales_ognivo@yandex.ru") 
-                                img(src="./img/icons/mail.svg", alt="mail")
+                                img(loading="lazy" src="./img/icons/mail.svg", alt="mail" width='36' height='36')
                                 | sales_ognivo@yandex.ru

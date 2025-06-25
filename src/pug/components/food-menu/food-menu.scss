@@ -3,7 +3,9 @@
 .food-menu {
   overflow: hidden;
   @include s(margin-top, 64);
-
+  @media (max-width: $tab-sm) {
+    @include s(margin-top, 48);
+  }
   .food-menu-inner {
     .food-menu-swiper {
       position: relative;
@@ -34,6 +36,7 @@
       display: flex;
       flex-direction: column;
       @include s(gap, 12);
+      align-items: center;
       .title {
         text-align: center;
         text-transform: uppercase;
@@ -43,23 +46,23 @@
         @include s(width, 318);
         @include s(height, 318);
         @media (max-width: $tab-sm) {
-          @include s(width, 80);
-          @include s(height, 80);
+          @include s(width, 206);
+          @include s(height, 206);
         }
         .alert-outer {
           @include s(width, 318);
           @include s(height, 318);
           @media (max-width: $tab-sm) {
-            @include s(width, 80);
-            @include s(height, 80);
+            @include s(width, 206);
+            @include s(height, 206);
           }
         }
         .alert-inner {
           @include s(width, 288);
           @include s(height, 288);
           @media (max-width: $tab-sm) {
-            @include s(width, 66);
-            @include s(height, 66);
+            @include s(width, 187);
+            @include s(height, 187);
           }
         }
       }

@@ -4,6 +4,9 @@
   position: relative;
   @include s(margin-top, 120);
   overflow: hidden;
+  @media (max-width: $tab-sm) {
+    @include s(margin-top, 62);
+  }
   .swiper-slide {
     img {
       width: 100%;

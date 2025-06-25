@@ -2,7 +2,9 @@
 
 .offices {
   @include s(margin-top, 96);
-
+  @media (max-width: $tab-sm) {
+    @include s(margin-top, 64);
+  }
   .offices-inner {
     h3 {
       text-align: center;
@@ -18,9 +20,17 @@
       @include s(margin-top, 36);
 
       @include s(gap, 10);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include s(margin-top, 20);
+        @include s(gap, 30);
+      }
       .offices__item {
         position: relative;
         @include s(height, 596);
+        @media (max-width: $tab-sm) {
+          @include s(height, 408);
+        }
         .image-wrapper {
           position: relative;
           &:after {
@@ -56,6 +66,9 @@
               rgba(0, 0, 0, 1) 100%
             );
             z-index: 2;
+            @media (max-width: $tab-sm) {
+              @include s(height, 180);
+            }
           }
           img {
             width: 100%;
@@ -72,6 +85,9 @@
           display: flex;
           flex-direction: column;
           align-items: center;
+          @media (max-width: $tab-sm) {
+            @include s(bottom, -22);
+          }
           .total {
             display: flex;
             align-items: center;
@@ -92,18 +108,34 @@
             color: var(--white-color);
             @include h3;
             @include s(margin-top, 20);
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 16);
+            }
           }
           .price {
             color: var(--accent-color);
             @include descr-l;
             text-transform: uppercase;
             @include s(margin-top, 20);
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 8);
+              @include descr-m;
+            }
           }
           .btn {
             @include s(Width, 56);
             @include s(height, 56);
             display: block;
             @include s(margin-top, 28);
+            @media (max-width: $tab-sm) {
+              @include s(Width, 40);
+              @include s(height, 40);
+              @include s(margin-top, 16);
+            }
+            img {
+              width: 100%;
+              height: 100%;
+            }
           }
         }
       }

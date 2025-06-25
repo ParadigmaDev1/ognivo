@@ -1,7 +1,23 @@
 mixin policy()
-    .policy
+    .policy.policy-page
         .policy-inner.container 
             h1 Политика конфиденциальности
+            .policy-menu.policy-menu-mob 
+                button(data-link='0').policy-meny__link
+                    span 1. 
+                    | Обрабатываемые данные
+                button(data-link='1').policy-meny__link
+                    span 2. 
+                    | Общие положения
+                button(data-link='2').policy-meny__link
+                    span 3. 
+                    | Термины
+                button(data-link='3').policy-meny__link
+                    span 4. 
+                    | Передача данных
+                button(data-link='4').policy-meny__link
+                    span 5. 
+                    | Изменение Политики конфиденциальности
             .policy-content
                 .policy-text 
                     h6 Настоящий документ «Политика конфиденциальности» (далее по тексту – «Политика») представляет собой правила использования /указать владельца сайта/ (далее – «мы» и/или «Администрация») данных интернет-пользователей (далее «вы» и/или «Пользователь»), собираемых с использованием сайта / указать URL сайта/ (далее – «Сайт»).
@@ -67,18 +83,18 @@ mixin policy()
                         li Администрация не осуществляет проверку достоверности предоставляемых данных и наличия у Пользователя необходимого согласия на их обработку в соответствии с настоящей Политикой, полагая, что Пользователь действует добросовестно, осмотрительно и прилагает все необходимые усилия к поддержанию такой информации в актуальном состоянии и получению всех необходимых согласий на ее использование.
                 .policy-menu 
                     .sticky-block 
-                        button(data-link='1').policy-meny__link
+                        button(data-link='0').policy-meny__link
                             span 1. 
                             | Обрабатываемые данные
-                        button(data-link='2').policy-meny__link
+                        button(data-link='1').policy-meny__link
                             span 2. 
                             | Общие положения
-                        button(data-link='3').policy-meny__link
+                        button(data-link='2').policy-meny__link
                             span 3. 
                             | Термины
-                        button(data-link='4').policy-meny__link
+                        button(data-link='3').policy-meny__link
                             span 4. 
                             | Передача данных
-                        button(data-link='5').policy-meny__link
+                        button(data-link='4').policy-meny__link
                             span 5. 
                             | Изменение Политики конфиденциальности

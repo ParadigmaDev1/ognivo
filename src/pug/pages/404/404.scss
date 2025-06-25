@@ -3,6 +3,10 @@
 .not-found {
   @include s(padding-top, 152);
   @include s(padding-bottom, 128);
+  @media (max-width: $tab-sm) {
+    @include s(padding-top, 110);
+    @include s(padding-bottom, 96);
+  }
   .not-found-inner {
     .title-wrapper {
       display: flex;
@@ -10,11 +14,18 @@
       @include s(gap, 28);
       @include s(margin-bottom, 28);
       justify-content: center;
+      @media (max-width: $tab-sm) {
+        @include s(margin-bottom, 23);
+        @include s(gap, 16);
+      }
       .image-wrapper {
         mask: url("../img/mask-404.png") center/cover no-repeat;
         @include s(width, 248);
         @include s(width, 300);
-
+        @media (max-width: $tab-sm) {
+          @include s(width, 148);
+          @include s(width, 178);
+        }
         img {
           width: 100%;
           height: 100%;
@@ -27,6 +38,9 @@
         @include s(font-size, 248);
         line-height: 68%;
         font-family: "spsl";
+        @media (max-width: $tab-sm) {
+          @include s(font-size, 148);
+        }
       }
     }
     .separator {
@@ -34,9 +48,15 @@
       margin: auto;
       &::before {
         @include s(width, 303);
+        @media (max-width: $tab-sm) {
+          @include s(width, 133);
+        }
       }
       &::after {
         @include s(width, 303);
+        @media (max-width: $tab-sm) {
+          @include s(width, 133);
+        }
       }
     }
     h3 {
@@ -47,6 +67,9 @@
       @include s(margin-bottom, 20);
 
       color: var(--accent-color);
+      @media (max-width: $tab-sm) {
+        @include s(margin-top, 24);
+      }
     }
     .btn {
       width: fit-content;

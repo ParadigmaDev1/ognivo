@@ -11,6 +11,7 @@ import { header } from "../pug/components/header/header.js";
 import { map } from "../pug/components/map/map.js";
 import { menu } from "../pug/components/menu/menu.js";
 import { infoBlock } from "../pug/components/info-block/info-block.js";
+import { policy } from "../pug/pages/policy/policy.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   accordionFunc();
@@ -24,5 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   hideText();
   header();
   infoBlock();
+  policy();
   menu();
 });

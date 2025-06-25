@@ -10,9 +10,18 @@ export const infoBlock = () => {
         button.setAttribute("aria-expanded", !expanded);
         tooltip.setAttribute("aria-hidden", expanded);
       });
+      button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", !expanded);
+        tooltip.setAttribute("aria-hidden", expanded);
+      });
 
       // Закрывать подсказку при клике вне области
       button.addEventListener("mouseleave", (e) => {
+        button.setAttribute("aria-expanded", "false");
+        tooltip.setAttribute("aria-hidden", "true");
+      });
+      document.addEventListener("touchstart", (e) => {
         button.setAttribute("aria-expanded", "false");
         tooltip.setAttribute("aria-hidden", "true");
       });

@@ -2,6 +2,9 @@
 
 .plan {
   @include s(margin-top, 124);
+  @media (max-width: $tab-sm) {
+    display: none;
+  }
   .plan-inner {
     h3 {
       @include h2;

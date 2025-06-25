@@ -257,18 +257,18 @@ export const swiper = () => {
         swiper.slideTo(1);
       },
     },
-    // breakpoints: {
-    //   0: {
-    //     slidesPerView: 1.1,
-    //     spaceBetween: 10,
-    //     centeredSlides: true,
-    //   },
-    //   767: {
-    //     slidesPerView: 3,
-    //     spaceBetween: 25,
-    //     centeredSlides: false,
-    //   },
-    // },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.1,
+        spaceBetween: 10,
+        centeredSlides: true,
+      },
+      767: {
+        slidesPerView: 2.15,
+        spaceBetween: 10,
+        centeredSlides: true,
+      },
+    },
   });
   const foodMenuSwiper = new Swiper(".food-menu-swiper", {
     modules: [Navigation],
@@ -280,17 +280,17 @@ export const swiper = () => {
       nextEl: ".food-menu-next",
     },
 
-    // breakpoints: {
-    //   0: {
-    //     slidesPerView: 1.1,
-    //     spaceBetween: 10,
-    //     centeredSlides: true,
-    //   },
-    //   767: {
-    //     slidesPerView: 3,
-    //     spaceBetween: 25,
-    //     centeredSlides: false,
-    //   },
-    // },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.4,
+        spaceBetween: 20,
+        centeredSlides: true,
+      },
+      767: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        centeredSlides: false,
+      },
+    },
   });
 };

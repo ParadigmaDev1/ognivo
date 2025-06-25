@@ -2,10 +2,15 @@
 
 .info-block {
   @include s(margin-top, 20);
+  @media (max-width: $tab-sm) {
+    @include s(margin-top, 28);
+  }
   .info-block-inner {
     @include s(padding-bottom, 48);
     border-bottom: 1px solid var(--lines-gold-color);
-
+    @media (max-width: $tab-sm) {
+      @include s(padding-bottom, 28);
+    }
     h1 {
       color: var(--accent-color);
       @include h1;
@@ -38,6 +43,11 @@
       display: grid;
       @include gtc(1fr, 432);
       @include s(gap, 60);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include s(gap, 16);
+        @include s(margin-top, 28);
+      }
       .info-hint-wrapper {
         position: relative;
         button {
@@ -45,6 +55,11 @@
 
           background-size: cover;
           cursor: pointer;
+          padding: 0;
+          @media (max-width: $tab-sm) {
+            @include s(width, 24);
+            @include s(height, 24);
+          }
           svg {
             width: 100%;
             height: 100%;
@@ -63,6 +78,13 @@
           @include s(bottom, 40);
           left: 0;
           text-align: left;
+          @media (max-width: $tab-sm) {
+            left: auto;
+            right: 0;
+            @include borr(12, 12, 0, 12);
+            @include s(width, 220);
+            @include s(bottom, 30);
+          }
         }
         .info-hint[aria-hidden="false"] {
           opacity: 1;
@@ -72,10 +94,16 @@
         .subtitle {
           color: var(--accent-color);
           @include h4;
+          @media (max-width: $tab-sm) {
+            margin-top: 0;
+          }
         }
         p {
           @include s(margin-top, 28);
           @include normal-m;
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 16);
+          }
         }
         .info-block-rooms {
           display: grid;
@@ -83,15 +111,26 @@
           @include s(column-gap, 48);
           @include s(row-gap, 16);
           @include s(margin-top, 36);
-
+          @media (max-width: $tab-sm) {
+            grid-template-columns: 1fr;
+            @include s(gap, 6);
+            @include s(margin-top, 12);
+          }
           .info-block__room {
             display: flex;
             align-items: center;
             @include s(gap, 20);
+            @media (max-width: $tab-sm) {
+              @include s(gap, 16);
+            }
             .image-wrapper {
               mask: url("../img/room-mask.png") center/cover no-repeat;
               @include s(width, 72);
               @include s(height, 72);
+              @media (max-width: $tab-sm) {
+                @include s(width, 56);
+                @include s(height, 56);
+              }
               img {
                 width: 100%;
                 height: 100%;
@@ -116,6 +155,9 @@
             @include gtc(1fr, 174);
             align-items: center;
             border-top: 1px solid var(--lines-gold-color);
+            @media (max-width: $tab-sm) {
+              @include gtc(1fr, 100);
+            }
             &:first-child {
               border-top: none;
             }
@@ -123,15 +165,25 @@
               display: flex;
               align-items: center;
               @include s(gap, 16);
+              @media (max-width: $tab-sm) {
+                @include s(gap, 14);
+              }
               img {
                 @include s(width, 48);
                 @include s(height, 48);
                 object-fit: cover;
+                @media (max-width: $tab-sm) {
+                  @include s(width, 36);
+                  @include s(height, 36);
+                }
               }
               p {
                 text-transform: uppercase;
                 @include descr-m;
                 color: var(--hover-color);
+                @media (max-width: $tab-sm) {
+                  @include descr-s;
+                }
               }
             }
             .value {
@@ -139,12 +191,20 @@
               display: flex;
               @include s(gap, 5);
               justify-content: flex-end;
+              text-transform: uppercase;
+              @media (max-width: $tab-sm) {
+                @include descr-s;
+                text-align: right;
+              }
             }
           }
         }
         .btn {
           width: 100%;
           @include s(margin-top, 28);
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 16);
+          }
         }
       }
     }

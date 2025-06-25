@@ -11,7 +11,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas: "content content" "img1 img2";
       @include s(gap, 10);
-      @include s(margin-top, 12);
+      @include s(margin-top, 64);
     }
     .image-container {
       display: flex;
@@ -19,6 +19,9 @@
       align-items: center;
       @include s(gap, 10);
       position: relative;
+      @media (max-width: $tab-sm) {
+        display: none !important;
+      }
       & > img {
         @include s(width, 29);
         @include s(height, 12);
@@ -84,7 +87,6 @@
       align-items: center;
       @media (max-width: $tab-sm) {
         grid-area: content;
-        @include s(margin-bottom, 36);
       }
       .title {
         text-align: center;

@@ -76,7 +76,7 @@
           @include s(bottom, 36);
           @include s(right, 48);
           @include s(left, 48);
-          z-index: 2;
+          z-index: 5;
           @media (max-width: $tab-sm) {
             @include s(bottom, 28);
             @include s(right, 28);

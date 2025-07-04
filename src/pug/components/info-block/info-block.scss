@@ -70,7 +70,7 @@
           background: var(--white-color);
           @include borr(12, 12, 12, 0);
           @include padding(20, 24);
-          box-shadow: var(--shadow);
+          box-shadow: var(--shadow-3);
           @include s(width, 260);
           pointer-events: none;
           opacity: 0;

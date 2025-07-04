@@ -28,6 +28,7 @@ export const map = () => {
             center: center,
             zoom: window.innerWidth > 768 ? 17 : 12,
           },
+          behaviors: ["drag", "pinchZoom", "dblClick"],
         },
         [new YMapDefaultFeaturesLayer({})]
       );

@@ -78,7 +78,9 @@ body {
 .fancybox__container {
   z-index: 10000;
 }
-
+.ymaps3x0--map-container {
+  cursor: grab;
+}
 .form {
   .input__row {
     display: flex;

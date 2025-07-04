@@ -187,6 +187,26 @@
             display: none;
           }
         }
+        .tg {
+          &:hover {
+            background: #66a7ed;
+            svg {
+              path {
+                fill: var(--white-color);
+              }
+            }
+          }
+        }
+        .wa {
+          &:hover {
+            background: #7ac859;
+            svg {
+              path {
+                fill: var(--white-color);
+              }
+            }
+          }
+        }
         .tg,
         .wa {
           @include s(min-width, 40);
@@ -210,6 +230,8 @@
   &.active {
     background: var(--beige-color);
     box-shadow: var(--shadow);
+    @include s(padding-top, 10);
+    @include s(padding-bottom, 10);
     .header-navigation {
       .burger {
         border-color: var(--lines-red-color);

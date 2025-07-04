@@ -220,6 +220,16 @@
       position: relative;
       a {
         color: var(--accent-color);
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          border-bottom: 1px dotted var(--accent-color);
+          height: 1px;
+          width: 100%;
+        }
       }
       &:before {
         content: "";
